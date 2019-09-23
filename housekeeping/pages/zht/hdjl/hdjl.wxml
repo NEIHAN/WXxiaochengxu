@@ -1,0 +1,26 @@
+<!--pages/zht/hdjl/hdjl.wxml-->
+<view style="width:100%;height:100%;padding-bottom:120rpx;">
+
+  <view class="row">
+    <text class='red'>获得记录</text>
+    <text class='white'>消费记录</text>
+
+  </view>
+  <view class='fgx'></view>
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view class='title'>
+      <text class='title_list'>{{item.score}}积分</text>
+      <text class='title_time'>{{item.sign_time}}</text>
+      <view class='fgx_one'></view>
+    </view>
+  </block>
+  <!--已加载--->
+  <view class='jiazai'>
+    <text class='jiazai_font'>已加载全部</text>
+
+  </view>
+
+
+
+
+</view>

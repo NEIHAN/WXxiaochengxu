@@ -1,0 +1,82 @@
+<!--pages/index/reposition.wxml-->
+
+<view id="reposition">
+    <view class="positionHeader"  bindtap="choiceAddress">
+        <!--
+        <view class="localtionIcon">
+          <image src="../../images/location.png"></image>
+          <text class="cityView">{{choiceprovince}}-{{choicecity}}-{{choicecounty}}</text>
+        </view>
+        ->
+        <!-- <view class="positionSoso">
+          <view class="soso">
+            <image src="../../images/soso.png"></image>
+            <input value="{{posAddr}}" placeholder='请输入地址'></input>
+          </view>    
+        </view> -->
+
+
+    </view>
+    <view class="positionContainer" hidden="{{hidden}}">
+        <view class="positionTop">
+          <span><image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon4.png"></image>  当前地址</span>
+          <text>{{address}}</text>
+          <span class="cx" bindtap="rePosition"> <image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/house.png"></image>重新定位</span>
+        </view>
+         <view class="myPosition">
+            <view class="listTitle">
+              <image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/house.png"></image><text>我的地址</text>
+            </view>
+            <view class="positionList">
+              <view class="list" data-detail="{{item.detail_addr}}" data-addr="{{item.loca_addr}}" wx:for="{{adds}}" bindtap='checkOneAddr' wx:key="{{index}}">
+                <text>{{item.loca_addr}} </text>
+                <span>{{item.linkman}} <em>{{item.contact_num}}</em></span>
+              </view>
+              <!-- <view class="list">
+                <text>北京市西城区 </text>
+                <span>姓名 <em>手机号</em></span>
+              </view> -->
+            </view>
+         </view>
+          <view class="addLocation" bindtap="addLoacatin">
+            <view>
+            <image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/addIcon.png"></image><text>新增地址</text>
+            </view>
+          
+          </view>
+    </view>
+    <!-- <view class="cityList" hidden="{{!hidden}}">
+        <view class="title">
+            <text>当前定位城市 :</text>
+            <span>北京市</span>
+        </view>
+        <view class="listCity">
+            <view class="citylistTitle">A</view>
+            <view class="citys">
+                <text>安庆</text>
+                <text>安山</text>
+                <text>安阳</text>
+            </view>
+        </view>
+        
+    </view> -->
+</view>
+<!--省市区  -->
+<view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+     <view class="cityheader">
+      <view bindtap="closeAddress" class="city-cancel">取消</view>
+      <view bindtap="sureAddress" class="city-true">确定</view>
+    </view> 
+  
+    <picker-view-column>
+      <view wx:for="{{provinces}}" style="line-height: 50px;text-align:center;" wx:key="{{index}}">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}"  style="line-height: 50px;text-align:center;" wx:key="{{index}}">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}"  style="line-height: 50px;text-align:center;" wx:key="{{index}}">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

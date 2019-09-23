@@ -1,0 +1,162 @@
+<view class="section bblg1"  bindtap="choiceAddress">
+  <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon4.png'></image>
+<!--<<<<<<< HEAD-->
+  <!--<input placeholder="天通苑西三区" />-->
+<!--</view>-->
+<!--<view class="section bblg1">-->
+  <!--<image></image>-->
+  <!--<input placeholder="详细地址，如1号楼" />-->
+<!--</view>-->
+<!--<view class="section bblg1">-->
+  <!--<image src='/images/icon1.png'></image>-->
+  <!--<input placeholder="请输入联系人" />-->
+<!--</view>-->
+<!--<view class="section bblg1">-->
+  <!--<image src='/images/icon3.png'></image>-->
+  <!--<input placeholder="手机号" />-->
+<!--</view>-->
+<!--<view class="section bblg1">-->
+  <!--<image src='/images/icon2.png'></image>-->
+  <!--<input  style="border-bottom:1px solid #000;width:100rpx;overflow:hidden;-webkit-box-flex:inherit" />m(请填写实际的平米数，不小于30)-->
+<!--</view>-->
+<!--<view class="section bblg1">-->
+  <!--<checkbox value="" checked=""/>设为默认地址-->
+<!--=======-->
+  <!-- <input placeholder="天通苑西三区" bindinput='positionFn' /> -->
+  <view class="cityView {{position=='请选择地址'?'normal':''}}" >{{position}}</view>
+   
+</view>
+<view class="section bblg1">
+  <image></image>
+  <input placeholder="详细地址，如1号楼" bindinput='detailAddrFn' />
+</view>
+<view class="section bblg1">
+  <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon1.png'></image>
+  <input placeholder="请输入联系人" bindinput='linkmanFn'/>
+  
+</view>
+<view class="section bblg1">
+  <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon3.png'></image>
+  <input placeholder="手机号" bindinput='contactNumFn' bindblur="iphoneInput"/>
+</view>
+<view class="section bblg1">
+  <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon2.png'></image>
+  <input  style="border-bottom:1px solid #000;width:100rpx;overflow:hidden;-webkit-box-flex:inherit" bindinput='squareFn' />㎡(请填写实际的平米数，不小于30)
+</view>
+<view class="section bblg1">
+  <checkbox-group bindchange='isDefaultFn'>
+    <checkbox value="" checked=""/>设为默认地址
+  </checkbox-group>
+</view>
+
+<view class="singlefoot">
+<button bindtap='submitAddr'>保存</button>
+
+</view>
+<!--省市区  -->
+<view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+     <view class="cityheader">
+      <view bindtap="closeAddress" class="city-cancel">取消</view>
+      <view bindtap="sureAddress" class="city-true">确定</view>
+    </view> 
+  
+    <picker-view-column>
+      <view wx:for="{{provinces}}" style="line-height: 50px;text-align:center;" wx:key="{{index}}">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}"  style="line-height: 50px;text-align:center;" wx:key="{{index}}">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}"  style="line-height: 50px;text-align:center;" wx:key="{{index}}">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+<!--问号 建议时长  -->
+<view id="suggestMask" hidden="{{suggestShow}}">
+    <view class="suggestBox">
+        <text class="suggestTitle">建议时长对照表</text>
+        <view class="table">
+            <view class="tr bg-w">
+              <view class="th">房屋面积</view>
+              <view class="th">建议时长</view>
+            </view>
+            <view class="tr bg-w">
+             <view class="th">≤60㎡</view>
+              <view class="th">4小时</view>
+            </view>
+            <view class="tr bg-w">
+              <view class="th">100㎡</view>
+              <view class="th">4~8小时</view>
+            </view>
+            <view class="tr bg-w">
+              <view class="th">150㎡</view>
+              <view class="th">8~12小时</view>
+            </view>
+            <view class="tr bg-w">
+              <view class="th">≥200㎡</view>
+              <view class="th">12小时以上</view>
+            </view>
+        </view>
+        <view class="interView">
+          <text>说明</text>
+          <text>1.所示时长为1人用时，2人则减半，超出时长线上补拍。</text>
+          <text>2.保洁选择时长根据不同的家庭面积、装修结构、布局以及基础卫生状况而定。</text>
+          <text>3.含擦玻璃选择时长根据楼层高低。玻璃框结构、玻璃大小、难易程度及基础卫生状况而定，玻璃如有贴膜，请提前告知，以便技师专业处理，避免擦拭期间划伤玻璃。</text>
+        </view>
+        <button bindtap="iKnow">我知道了</button>
+    </view>
+
+</view>
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showaddressModal}}"></view>
+<view class="address-mask-container" wx:if="{{showaddressModal}}">
+    <view style="display: flex">
+        <view class="addressModel-header" style="flex: 1">请选择地区</view>
+        <view bindtap="hideModal" style="text-align: right;padding: 10rpx 20rpx 0 0"><icon type="clear" size="20" /></view>
+
+    </view>
+
+
+    <view class="addressModel-tab">
+        <view bindtap="provinceTabTap" class="addressModel-tabItem {{tab1TapShow?'borderBottomShow':''}} {{provinceSelected=='请选择'?'active-tabItem':''}} ">{{provinceSelected}}</view>
+        <view bindtap="cityTabTap" wx:if="{{select2Show}}" class="addressModel-tabItem {{tab2TapShow?'borderBottomShow':''}} {{citySelected=='请选择'?'active-tabItem':''}} ">{{citySelected}}</view>
+        <view bindtap="districtTabTap" wx:if="{{select3Show}}" class="addressModel-tabItem {{tab3TapShow?'borderBottomShow':''}} {{districtSelected=='请选择'?'active-tabItem':''}} ">{{districtSelected}}</view>
+        <view bindtap="streetTabTap" wx:if="{{select4Show}}" class="addressModel-tabItem {{tab4TapShow?'borderBottomShow':''}} {{streetSelected=='请选择'?'active-tabItem':''}}">{{streetSelected}}</view>
+    </view>
+    <view class="addressItemContainer">
+        <scroll-view scroll-y style="height: 70vh;">
+            <block wx:if="{{tab1TapShow}}">
+                <view data-name="{{item.areaname}}" data-code="{{item.id}}" bindtap="provinceTap" wx:for="{{provinceArr}}" wx:key="{{index}}" class="addressItemShow {{provinceSelected==item.areaname?'activeAddressItemShow':''}}">
+                    {{item.areaname}}
+                    <icon wx:if="{{provinceSelected==item.areaname}}" color="#fd1438" type="success_no_circle" size="12"/>
+                </view>
+            </block>
+            <block wx:if="{{tab2TapShow}}">
+                <view data-name="{{item.areaname}}" data-code="{{item.id}}" bindtap="cityTap" wx:for="{{cityArr}}" wx:key="{{index}}" class="addressItemShow {{citySelected==item.areaname?'activeAddressItemShow':''}}">
+                    {{item.areaname}}
+                    <icon wx:if="{{citySelected==item.areaname}}" color="#fd1438" type="success_no_circle" size="12"/>
+                </view>
+            </block>
+
+            <block wx:if="{{tab3TapShow}}">
+                <view data-name="{{item.areaname}}" data-code="{{item.id}}" bindtap="districtTap" wx:for="{{districtArr}}" wx:key="{{index}}" class="addressItemShow {{districtSelected==item.areaname?'activeAddressItemShow':''}}">
+                    {{item.areaname}}
+                    <icon wx:if="{{districtSelected==item.areaname}}" color="#fd1438" type="success_no_circle" size="12"/>
+                </view>
+            </block>
+            <block wx:if="{{tab4TapShow}}">
+                <view data-name="{{item.areaname}}" data-code="{{item.id}}" bindtap="streetTap" wx:for="{{streetArr}}" wx:key="{{index}}" class="addressItemShow {{streetSelected==item.areaname?'activeAddressItemShow':''}}">
+                    {{item.areaname}}
+                    <icon wx:if="{{streetSelected==item.areaname}}" color="#fd1438" type="success_no_circle" size="12"/>
+                </view>
+            </block>
+
+
+        </scroll-view>
+
+    </view>
+
+
+
+
+</view>

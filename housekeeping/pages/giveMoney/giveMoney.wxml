@@ -1,0 +1,95 @@
+<view wx:if="{{!hasLogin}}">
+    <button style="margin-top:45%;width:100%;" open-type="getUserInfo" bindgetuserinfo="bindUser">授权登录</button>
+</view>
+<view wx:if="{{hasLogin}}" style="position:relative">
+    <view class='plr10 px12 white' style="padding-bottom:30rpx;border-bottom:{{globalColor}} 5px dashed;border-top:1px solid #f7f5f5">
+        <view class="viewL r_font">
+            <text class="viewL">充值账户：</text>
+            {{mobile}}
+        </view>
+        <view class="viewL r_font">
+            <text class="viewL">账户余额：</text>
+            {{balance}}
+        </view>
+    </view>
+    <view class='plr10 white' style='width:auto;padding-bottom:30rpx;'>
+        <view wx:if="{{d.list && d.list.length>0}}" style='position:relative;top:50rpx;' id="panel" class="flex-column">
+            <view class="flex-cell flex-row">
+                <text style="border-top:solid 1rpx #f7f5f5;font-size:28rpx;border-left:solid 1rpx #f7f5f5;color:{{globalColor}}"
+                      class="flex-cell flex-row">充值额度
+                </text>
+                <text style="border-top:solid 1rpx #f7f5f5;font-size:28rpx;color:{{globalColor}}" class="flex-cell flex-row">赠送</text>
+            </view>
+            <block wx:for="{{d.list}}" wx:key="{{index}}">
+                <view class="flex-row flex-cell">
+                    <text style='border-left:solid 1rpx #f7f5f5;' class="flex-cell flex-row">{{item.upperlimit}}-{{item.lowerlimit}}元</text>
+                    <text class="flex-cell flex-row">{{item.give}}</text>
+                </view>
+            </block>
+            <!--<view class="flex-row flex-cell">-->
+            <!--<text style='border-left:solid 1rpx #f7f5f5;' class="flex-cell flex-row">500-999元</text>-->
+            <!--<text class="flex-cell flex-row">赠送200元</text>-->
+            <!--</view>-->
+            <!--<view class="flex-row flex-cell">-->
+            <!--<text style='border-left:solid 1rpx #f7f5f5;' t class="flex-cell flex-row">1000-1999元</text>-->
+            <!--<text class="flex-cell flex-row">充值金额的60%</text>-->
+            <!--</view>-->
+            <!--<view class="flex-row flex-cell">-->
+            <!--<text style='border-left:solid 1rpx #f7f5f5;' class="flex-cell flex-row">2000元以上</text>-->
+            <!--<text class="flex-cell flex-row">充值金额的100%</text>-->
+            <!--</view>-->
+
+        </view>
+
+        <view class='px12 tcenter' style='margin-top:60rpx;'>
+            限时福利：超值充值豪礼，多充多送，不要错过哦！
+        </view>
+
+
+    </view>
+
+
+    <view class='plr10 white' style='width:auto;padding-top:30rpx;margin-top:20rpx;padding-bottom:60rpx;'>
+        <view style='padding-top:5px;padding-bottom:5px;border:solid 1px {{globalColor}};border-radius:10px;'>
+            <view class="col">
+                <view style='line-height:1.4rem;text-align:center;color:{{globalColor}}' class="col-1">￥</view>
+                <view class="col-11">
+                    <input value="{{inputMoney}}" type='digit' bindinput="bindKeyInput" placeholder="请输入金额"/>
+                </view>
+            </view>
+        </view>
+
+
+        <view class="col" style='margin-top:10px;padding-bottom:10px;border-bottom:solid 1rpx #f7f5f5;'>
+            <view class="col-6" style="font-size:28rpx">
+                赠送金额:{{backMoney}}
+            </view>
+            <view class="col-6" style="font-size:28rpx">
+                可用余额:{{totalMoney}}
+            </view>
+        </view>
+
+        <view style='background:#f7f5f5;padding-top:2px;padding-bottom:2px;border-radius:10px;'>
+            <view class="col">
+                <view style='color:{{globalColor}};line-height:1.4rem;text-align:center;' class="col-2">备注：</view>
+                <view class="col-10">
+                    <input  adjust-position="{{positionShow}}" value="{{remarks}}" bindinput="remarkChang" placeholder="请输入备注"/>
+                </view>
+            </view>
+        </view>
+
+
+        <view class='c999' style="margin-top:10px;">
+            <view>1.充值余额可购买平台所有服务（保洁套餐等优惠产品除外）</view>
+            <view>2.充值余额长期有效</view>
+            <view>3.充值金额与赠送金额不可提现，不可转赠</view>
+        </view>
+
+        <form bindsubmit="buy" report-submit="true">
+            <button class="{{inputMoney!=''?'clickTrue':''}}" style='margin-top:20px;' form-type="submit">确认充值</button>
+        </form>
+
+    </view>
+
+
+</view>

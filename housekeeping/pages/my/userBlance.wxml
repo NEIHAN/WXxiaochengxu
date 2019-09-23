@@ -1,0 +1,39 @@
+<!--pages/my/userBlance.wxml-->
+<view class="userblContainer">
+
+
+  <view class="userbl" >
+  <image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/yueBg.jpg"></image>
+    <text class="blance-detail" bindtap='linkDetailFn'>明细</text>
+    <view style="margin-top:-30px;">
+      <text class="my-blance">{{myBlance}}</text>
+       <!-- <navigator url="../../pages/giveMoney/giveMoney" class="j_usenav">立即充值</navigator>  -->
+       <text class="j_usenav" bindtap="giveMoney">立即充值</text>
+    </view>
+  </view>
+  <view class="activity-place">
+    <view></view>
+    活动专区
+  </view>
+  <scroll-view class="activity-swiper" scroll-x="true"  >
+
+    <view data-id="{{item.activity_id}}" bindtap="goActivity"   class="activity-swiper-item" wx:for="{{act_list}}" wx:key="{{index}}">
+      <!--标记图-->
+      <image src="{{item.pic}}" class="slide-image" />
+      <view class="first-desc">
+        <view class="first-desc-left">
+          {{item.title}}
+        </view>
+        <view class="first-desc-right">低至￥{{item.price}}/{{item.unit}}</view>
+
+      </view>
+      <view class="second-desc">{{item.content}}</view>
+    </view>
+
+  </scroll-view>
+
+    <view class="userbl-tip">
+      <text>余额可购买平台所有服务(保洁套餐等优惠产品除外)</text>
+      <text>如特殊原因发生退费，退费金额=实收金额-消费金额</text>
+    </view>
+</view>

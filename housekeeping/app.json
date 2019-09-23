@@ -1,0 +1,109 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/zht/erweima/erweima",
+    "pages/zht/erweima2/erweima2",
+    "pages/zht/integral1/integral1",
+    "pages/zht/invitefz/invitefz",
+    "pages/zht/jifenguize/jifenguize",
+    "pages/zht/meinvite/meinvite",
+    "pages/zht/military/military",
+    "pages/zht/hdjl/hdjl",
+    "pages/zht/weiyaoqingx/weiyaoqingx",
+    "pages/zht/weiyaoqing/weiyaoqing",
+    "pages/activity/activity",
+    "pages/confirmorder-activity/confirmorder-activity",
+    "pages/activityDetail/activityDetail",
+    "pages/my/newOrderDetail",
+    "pages/my/newaddress",
+    "page/index/homeRepair",
+    "pages/index/paySuccess",
+    "pages/my/my",
+    "pages/index/addLocation",
+    "pages/index/reposition",
+    "pages/my/login",
+    "pages/index/fuwushijian",
+    "pages/my/confirmOrder",
+    "pages/my/orderDetail",
+    "pages/my/myorder",
+    "pages/my/address",
+    "pages/giveMoney/giveMoney",
+    "pages/index/SingleReservation",
+    "pages/my/Coupon",
+    "pages/index/CleaningProject",
+    "pages/index/homeRepair",
+    "pages/index/homeRepairDetail",
+    "pages/my/PeriodicOrder",
+    "pages/index/PeriodicReservation",
+    "pages/my/dingdanxiangx",
+    "pages/my/chakanpj",
+    "pages/my/modify",
+    "pages/index/detail",
+    "pages/logs/logs",
+    "pages/my/helpList",
+    "pages/my/questionDetail",
+    "pages/my/share",
+    "pages/my/fovwer",
+    "pages/my/userBlance",
+    "pages/my/blanceDetail",
+    "pages/my/userPro",
+    "pages/my/linkToActivity",
+    "pages/my/contactUs",
+    "pages/my/evaluate",
+    "pages/my/feedBack",
+    "pages/index/url/url"
+  ],
+  "tabBar": {
+    "color": "#000",
+    "backgroundColor": "#fff",
+    "selectedColor": "#fd1438",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/foot1.jpg",
+        "selectedIconPath": "./images/foot1-1.jpg"
+      },
+      {
+        "pagePath": "pages/giveMoney/giveMoney",
+        "text": "充值",
+        "iconPath": "./images/foot2.jpg",
+        "selectedIconPath": "./images/foot2-2.jpg"
+      },
+      {
+        "pagePath": "pages/zht/integral1/integral1",
+        "text": "积分",
+        "iconPath": "./images/weijifen.png",
+        "selectedIconPath": "./images/jifen.png"
+      },
+      {
+        "pagePath": "pages/my/myorder",
+        "text": "订单",
+        "iconPath": "./images/foot3.jpg",
+        "selectedIconPath": "./images/foot3-3.jpg"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./images/foot4.jpg",
+        "selectedIconPath": "./images/foot4-4.jpg"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于服务定位"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f4f4f4",
+    "backgroundColor": "#f4f4f4",
+    "navigationBarTitleText": "在乎生活家政",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  },
+  "sitemapLocation": "sitemap.json"
+}

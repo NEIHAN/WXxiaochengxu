@@ -1,0 +1,36 @@
+/* pages/index/homeRepair.wxss */
+.swiper {
+  height: 300rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+.j_homeremain{
+  background-color:#fff; 
+  padding-left: 3%;
+  padding-bottom: 30rpx;
+  margin-bottom:25rpx;
+}
+.j_homeremain .text1{
+  font-size: 34rpx;
+  padding:30rpx 0;
+}
+.j_reparnav{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+
+}
+.j_reparnav .item{
+  padding:15rpx 25rpx;
+  background:#ebf0f3;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+
+}

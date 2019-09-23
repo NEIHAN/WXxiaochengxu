@@ -1,0 +1,60 @@
+page{
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.bg-img{
+    width: 100%;
+    height: 422rpx;
+}
+.activity-item-container{
+    /*padding-top: 500rpx;*/
+    position: absolute;
+    width: 100%;
+    left:0;
+    top:0;
+}
+.activity-item-container  .activity-item{
+    margin: 0 30rpx 20rpx;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 20rpx 30rpx;
+}
+.activity-item-title{
+    font-size: 32rpx;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}
+.activity-item-small-title{
+    font-size: 24rpx;
+    color: #999;
+    margin-bottom: 10rpx;
+
+}
+.activity-item-footer{
+    display: flex;
+    justify-content: space-between;
+
+}
+.activity-item-tip{
+    line-height: 48rpx;
+}
+.activity-item-tip,.activity-item-price{
+    font-size: 24rpx;
+    color: #fd1438;
+}
+.activity-item-price{
+    font-size: 34rpx;
+    font-weight: bold;
+
+}
+.getMoney{
+    display: inline-block;
+    width: 40rpx;
+    height: 40rpx;
+    background: url("http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/getmoney.jpg");
+    background-size: cover;
+    vertical-align:top;
+
+}

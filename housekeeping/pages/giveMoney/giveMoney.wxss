@@ -1,0 +1,53 @@
+/* pages/giveMoney/giveMoney.wxss */
+page{
+
+}
+#panel{
+  
+}
+.white{
+  background:#fff;
+}
+.r_font{
+  padding-top:20rpx;
+}
+.r_font,.r_font text{
+  font-size:28rpx;
+  color:#333; 
+}
+.r_font text{
+  margin-right:10rpx;
+}
+#panel text{
+
+  border-right: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+  font-size:12px;
+}
+
+.flex-row{
+  line-height:6vh;
+  display: flex;
+  height: 60rpx;
+  flex-direction: row;
+  justify-content: center;
+   /* align-items: center;  */
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.flex-cell{
+  flex: 1;
+}
+button.clickTrue{
+  background:#fd1439;
+  color:#fff;
+}
+.c999 view{
+  color: #999;
+  font-size: 12px;
+}

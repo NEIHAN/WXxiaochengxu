@@ -1,0 +1,38 @@
+<view class='j_homeremain'>
+  <view >
+    <!--<view data-type="{{item.s_type}}" data-tip="{{item.s_tip}}" data-id="{{item.s_id}}" bindtap="timeChange"  class="navigator  {{item.s_id===activeTtitle?'hover':''}}" wx:for="{{projectArr}}" wx:key="{{index}}">-->
+      <!--<text>{{item.s_type}}</text>-->
+      <!--<text class="text1 textcolor">￥{{item.s_price}}</text>-->
+    <!--</view>-->
+    <!--<view style="margin: 10rpx 0">-->
+      <!--{{activeTip}}-->
+    <!--</view>-->
+    <view style="display: flex;width: 100%;padding:20rpx 30rpx;font-size: 15px;background-color: #fff">
+      <text>房屋面积：</text>
+      <view>
+        <input bindblur="blurInput" style="margin:-12rpx 0 0;width:84rpx;border-bottom: 1px solid #333;display: inline-block;float:left;font-size:14px;" type="number"  bindinput="bindinputValue" value="{{inputValue}}"  />
+        <text style="display:inline-block;float:left;">平米(请输入平方数，不小于30平米)</text>
+
+      </view>
+    </view>
+    <view style="padding:20rpx 30rpx;display: flex;background-color: #fff;border-top: 1px solid #eee;">
+      <!-- <text>服务时长 : {{service_time}}小时/人</text> -->
+      <text>服务时长: </text>
+      <view>
+         <input bindblur="" style="margin:-12rpx 0 0;width:84rpx;border-bottom: 1px solid #333;display: inline-block;float:left;font-size:14px;" type="number" bindinput="" value="{{service_time}}"  />
+        <text style="display:inline-block;float:left;">小时/人</text>
+      </view>
+    </view>
+    <view style="padding:20rpx 30rpx;display: flex;background-color: #fff;border-top: 1px solid #eee;">
+      <text>服务人数 : {{service_num}}人</text>
+    </view>
+    <view style="padding:20rpx 30rpx;display: flex;background-color: #fff;border-top: 1px solid #eee;border-bottom: 1px solid #eee;">
+      <text>服务总时长 : {{total_time}}小时</text>
+    </view>
+  </view>
+</view>
+
+<!--底部按钮-->
+<view class="singlefoot">
+  <button bindtap="setRoomType">下一步</button>
+</view>

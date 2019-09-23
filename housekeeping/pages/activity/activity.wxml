@@ -1,0 +1,17 @@
+
+        <scroll-view class="activity-item-container" scroll-y="true">
+            <image src="{{bg_img}}" alt="" class="bg-img"></image>
+
+            <view data-id="{{item.act_item_id}}" bindtap="goActivityDetail"  class="activity-item"  wx:for="{{act_list}}" wx:key="{{index}}">
+                <view class="activity-item-title">{{item.set_name}}</view>
+                <view class="activity-item-small-title">{{item.set_describe}}</view>
+                <view class="activity-item-footer">
+                    <view class="activity-item-tip">
+                        <view class="getMoney"></view>
+                        {{item.set_discount}}
+                    </view>
+                    <view class="activity-item-price">￥{{item.set_price}}</view>
+                </view>
+            </view>
+
+        </scroll-view>

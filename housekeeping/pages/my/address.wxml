@@ -1,0 +1,28 @@
+<!--pages/my/address.wxml-->
+<view>
+  <view class='plr10'>
+    <navigator url="/pages/my/newaddress"><button class="j_addewssbtn bgcolor">新增服务地址</button></navigator>
+  </view>
+  <view class="j_addresslist" wx:for="{{adds}}" wx:key="{{index}}">
+    <view data-id="{{item.addr_id}}" bindtap="setDefaultAddr">
+      <view class="view1 viewL plr10">{{item.linkman}}   <text>{{item.contact_num}}</text></view>
+      <view class="view2  plr10">{{item.loca_addr}}{{item.detail_addr}}</view>
+    </view>
+
+    <view class="view3 plr10">
+      <view>
+        <button wx:if="{{item.is_default!=1}}" class="mini-btn" data-id="{{item.addr_id}}" bindtap="setDefaultAddr" size="mini" type="default">设置默认</button>
+        <button wx:if="{{item.is_default==1}}" style="color:red;border:1px solid red;" class="mini-btn" size="mini" type="default">默认地址</button>
+      </view>
+      <view>
+        <text></text>
+      </view>
+      <view>
+        <navigator url="/pages/my/modify?addr_id={{item.addr_id}}" class="navigator">
+          <button class="mini-btn" size="mini" type="default">编辑</button>
+        </navigator>
+        <button class="mini-btn" data-id="{{item.addr_id}}" bindtap='deleteAddr' size="mini" type="default" style='margin-left:10px;border:1px solid #ebebeb;'>删除</button>
+      </view>
+    </view>
+  </view>
+</view>

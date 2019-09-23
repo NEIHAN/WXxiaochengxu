@@ -1,0 +1,79 @@
+<view class="viewWEBKIT ptlr15 bblg1"  wx:if="{{options.yy1_id==1||options.yy1_id==2}}">
+  <view class="viewleft viewL">
+    <image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon9.png"></image>
+    <text>保洁时长</text>
+  </view>
+  <view class="viewL viewtest viewright">
+    <view class='viewtime2' bindtap="decrease">-</view>
+      <!--<input  bindinput="bindKeyInput" type='number' value='{{value}}' />-->
+  
+    <span style="padding:0 10rpx;line-height:50rpx;font-size:28rpx">{{value}}小时</span>
+       <view class='viewtime3' bindtap="increase">+</view>
+  </view>
+</view>
+
+<view class="viewWEBKIT ptlr15 bblg1"  wx:if="{{options.yy1_id==1||options.yy1_id==2}}">
+  <view class="viewleft viewL">
+    <image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/ren.png"></image>
+    <text>服务人数</text>
+  </view>
+  <view class="viewL viewtest viewright">
+    <view class='viewtime2' bindtap="decreasePeople">-</view>
+      <!--<input  bindinput="bindKeyInput" type='number' value='{{value}}' />-->
+  
+    <span style="padding:0 10rpx;line-height:50rpx;font-size:28rpx">{{peopleNum}}人</span>
+       <view class='viewtime3' bindtap="increasePeople">+</view>
+  </view>
+</view>
+<navigator url="/pages/giveMoney/giveMoney" class="viewleft viewL ptlr15">
+  <image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon13.png"></image>
+  <text>充值赠送超值比例金额，预约服务更实惠!</text>
+</navigator>
+
+
+<!--时间-->
+<view class='maketime'>
+  <view class="maketimetop">
+    <view class="container">
+
+      <view class="page-body">
+        <view class="page-section">
+          <view class="page-section-spacing">
+            <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+              <view data-date="{{item.date}}" data-id="{{item.l_title}}" bindtap="timeChange" wx:for="{{serTime}}" wx:key="{{index}}"   class="scroll-view-item_H  demo-text-1 {{item.l_title===activeTtitle?'hoverbg':''}}">
+                <!--<text>今天</text>-->
+                <view style="display: flex;flex-direction: column">
+                  <text>{{item.date}}</text>
+                  <text>{{item.l_title}}</text>
+
+                </view>
+              </view>
+            </scroll-view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+    </view>
+    <view class="maketimebottom  plr10">
+      <view class="timemin">
+
+        <view data-parentid="{{activeTtitle}}" bindtap="dayChange" data-sernum='{{item.l_sernum}}' data-stock='{{item.l_stock}}' data-id="{{item.l_time}}" class="timefloat {{item.l_stock==0||item.l_sernum==0?'zhihui':''}} {{activeDay==item.l_time+'/'+activeTtitle?'xuanzhongbg':''}}" wx:for="{{serDay}}" wx:key="{{index}}">
+          <text class="text1">{{item.l_time}}</text>
+          <image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon16.png" wx:if="{{activeDay==item.l_time+'/'+activeTtitle}}"></image>
+
+          <text class="text2" wx:if="{{item.l_stock==0||item.l_sernum==0}}">约满</text>
+        </view>
+
+      </view>
+    </view>
+</view>
+
+<!--时间-->
+
+
+<!--底部按钮-->
+<view class="singlefoot">
+  <button bindtap="submit" style="background:#fd1438;">确认</button>
+</view>

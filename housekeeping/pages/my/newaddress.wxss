@@ -1,0 +1,131 @@
+/* pages/my/newaddress.wxss */
+.section{
+  display: -webkit-box;
+  background-color: #fff;
+  -webkit-box-align:center;
+  font-size: 28rpx;
+  padding:20rpx 30rpx 20rpx 25rpx;
+}
+.cityView{
+  font-size: 28rpx;
+}
+.section image{
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}
+.section input{
+  -webkit-box-flex:1;
+  width: 100%;
+}
+.section .suggestTime{
+  width:20px;height:20px;background:#fd1438;
+  color:#fff;
+  border-radius:50%;
+  font-size:14px;text-align:center;
+}
+
+.citypickers{
+ 	  position: fixed;
+ 	  height: 100%;
+ 	  width: 100%;
+ 	  min-height: 100%;
+ 	  background-color: red;
+    
+ 	}
+ 	
+ 	.citybody {
+ 	  position: fixed;
+ 	  bottom: 0px;
+     background: #fff;
+ 	}
+ 	
+ 	.cityheader {
+ 	  position: absolute;
+ 	  top:0px;
+ 	  width: 100%;
+ 	  z-index: 4;
+ 	}
+   .cityheader text{
+     text-align:center;
+     font-size:16px;
+     line-height:30px;
+   }
+ 	
+ 	.city-cancel {
+ 	  float: left;
+ 	  margin: 20rpx;
+ 	  color: #818181;
+ 	}
+ 	
+ 	.city-true {
+ 	  float: right;
+ 	  margin: 20rpx;
+ 	  color: #2FB42E
+ 	}
+ 	
+ 	.picker {
+ 	  background-color: #fff;
+ 	  border-bottom: 1px #d9d9d9 solid;
+ 	  border-top: 1px #d9d9d9 solid;
+ 	  padding: 20rpx;
+ 	}
+.modal-mask {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #000;
+	opacity: 0.5;
+	overflow: hidden;
+	z-index: 999;
+	color: #fff;
+}
+.address-mask-container{
+	position: fixed;
+	width: 100%;
+	z-index:9998;
+	bottom:0;
+	left:0;
+	background-color: #fff;
+}
+.addressModel-header{
+	text-align: center;
+	padding: 15rpx;
+	font-size: 14px;
+	color: #999;
+}
+.addressModel-tab{
+	display: flex;
+	padding-left: 20rpx;
+}
+.addressModel-tabItem{
+	font-size: 14px;
+	margin-right: 40rpx;
+	padding-bottom: 8rpx;
+
+}
+.active-tabItem{
+	color: #fd1438;
+}
+.borderBottomShow{
+	border-bottom: 1px solid #fd1438;
+
+}
+.addressItemContainer{
+	height:70vh;
+	overflow-y: scroll;
+}
+.addressItemShow{
+	padding: 20rpx;
+	font-size: 14px;
+
+}
+.activeAddressItemShow{
+	color: #fd1438;
+}
+.normal{
+	color: #999;
+}

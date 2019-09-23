@@ -1,0 +1,316 @@
+<!--pages/my/fuwushijian.wxml-->
+<view wx:if="{{fromActivity}}">
+  <view class="orderItem">
+    <text class="text1">联系人：</text>
+    <text>{{address.linkman}}</text>
+  </view>
+  <view class="orderItem">
+    <text class="text1">联系电话：</text>
+    <text>{{address.contact_num}}</text>
+  </view>
+  <view class="orderItem" style="display: flex">
+    <text class="text1" style="white-space: nowrap">服务地址：</text>
+    <text style="flex:1;">{{address.loca_addr}}{{address.detail_addr}}</text>
+  </view>
+  <view class="orderItem">
+    <text class="text1">服务项目：</text>
+    <text>{{activityAll.service_items}}</text>
+  </view>
+  <view class="orderItem" style="display: flex">
+    <text class="text1" style="white-space: nowrap">附加服务：</text>
+    <text style="flex:1;">{{activityAll_tool_name}}</text>
+  </view>
+  <view class="orderItem">
+    <text class="text1">服务频次：</text>
+    <text>{{activityAll.service_frequency}}</text>
+  </view>
+  <view class="orderItem ">
+    <text class="text1">服务时长：</text>
+    <text>{{activityAll.service_duration}}小时</text>
+  </view>
+  <view class="orderItem ">
+    <text class="text1">服务周期：</text>
+    <text>{{activityAll.service_cycle}}周</text>
+  </view>
+  <view class="orderItem ">
+    <text class="text1">服务人数：</text>
+    <text>{{activityAll.service_number}}人</text>
+  </view>
+
+  <view class="orderItem ">
+    <text class="text1">服务数量：</text>
+    <text>{{activityAll.service_cs}}次</text>
+  </view>
+
+
+  <navigator class="j_singlelist" url="/pages/my/Coupon?fromConfirmOrder=2" style="margin-top: 20rpx">
+    <view class="j_singleft viewWEBKIT" style="padding: 20rpx 0">
+      <text style="color:#333">优惠券</text>
+      <!--<image src='/images/icon10.png'></image>-->
+      <text style="padding-right:40rpx;">{{couponSelect}}</text>
+    </view>
+    <view class="jt" style="top: 20rpx;">
+      <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/jt.png'></image>
+    </view>
+  </navigator>
+  <view class="orderItem orderTotal">
+    <text>合计金额：</text>
+    <text style="color:#fd1438">￥{{totalPrice}}</text>
+  </view>
+  <view class="orderItem" style="padding-bottom:15rpx;">
+    <text style="padding:5px 0">备注：</text>
+    <textarea wx:if="{{!showModal}}" bindinput="bindKeyInput" value='{{taskvalue}}' style="position: relative;z-index: -1;width:100%;height:80px;padding:10px;background:#fafafa;color:#333;padding-left:0;" placeholder='有什么附加条件吗？'></textarea>
+    <view wx:else>{{taskvalue}}</view>
+  </view>
+</view>
+<view wx:else>
+  <view wx:if="{{fromPeriod}}">
+    <view class="orderItem">
+      <text class="text1">联系人：</text>
+      <text>{{address.linkman}}</text>
+    </view>
+    <view class="orderItem">
+      <text class="text1">联系电话：</text>
+      <text>{{address.contact_num}}</text>
+    </view>
+    <view class="orderItem" style="display: flex">
+      <text class="text1" style="white-space: nowrap">服务地址：</text>
+      <text style="flex:1;">{{address.loca_addr}}{{address.detail_addr}}</text>
+    </view>
+    <view class="orderItem">
+      <text class="text1">服务项目：</text>
+      <text>{{name}}</text>
+    </view>
+
+
+    <view class="orderItem">
+      <text class="text1">服务频次：</text>
+      <text>{{servicePeriod}}</text>
+    </view>
+    <view class="orderItem ">
+      <text class="text1">服务时长：</text>
+      <text>{{serviceHours}}小时</text>
+    </view>
+    <view class="orderItem ">
+      <text class="text1">服务时间：</text>
+      <text>{{serTime}}周</text>
+    </view>
+    <!--<view class="orderItem ">-->
+    <!--<text>服务人数：</text><text >{{service_num}}</text>-->
+    <!--</view>-->
+    <view class="orderItem ">
+      <text class="text1">周期服务时间：</text>
+      <text>{{serviceTime}}</text>
+    </view>
+    <view class="orderItem " style="padding-bottom:20rpx" style="padding-bottom: 15rpx">
+      <text class="text1">首次服务：</text>
+      <text>{{serviceFirst}}</text>
+    </view>
+
+    <!--<view class="j_singlelist" >-->
+    <!--&lt;!&ndash; wx:if="{{d.yy1_id==1||d.yy1_id==2}}" &ndash;&gt;-->
+    <!--<view class="j_singleft">-->
+    <!--<image src='/images/icon8.png'></image>-->
+    <!--<text>使用我家洗洁剂({{cleaner_price}}元/{{cleaner_unit}}) </text>-->
+
+    <!--</view>-->
+    <!--<checkbox-group bindchange="serviceValChange">-->
+    <!--<label class="checkbox">-->
+    <!--<checkbox value="coupon" checked="{{checked}}" />-->
+    <!--</label>-->
+    <!--</checkbox-group>-->
+    <!--</view>-->
+    <!--<button open-type="share" class="orderItem" style="position:static;text-align:start;border:none;height:auto;width:100%;padding-top:0;margin-top:20rpx;">-->
+    <!--<text>分享</text> <text style="color: #fff;font-size: 10px;margin-left: 20rpx;background:#fd2438;border-radius:24px;padding:0 10px;height:40rpx;line-height:40rpx;">分享成功可得优惠券</text>-->
+    <!--</button>-->
+    <navigator class="j_singlelist" url="/pages/my/Coupon?fromConfirmOrder=1" style="margin-top: 20rpx">
+      <view class="j_singleft viewWEBKIT" style="padding: 20rpx 0">
+        <text style="color:#333">优惠券</text>
+        <!--<image src='/images/icon10.png'></image>-->
+        <text style="padding-right:40rpx;">{{couponSelect}}</text>
+      </view>
+      <view class="jt" style="top: 20rpx;">
+        <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/jt.png'></image>
+      </view>
+    </navigator>
+    <view class="orderItem orderTotal">
+      <text>合计金额：</text>
+      <text style="color:#fd1438">￥{{totalPrice}}</text>
+    </view>
+    <view class="orderItem" style="padding-bottom:15rpx;">
+      <text style="padding:5px 0">备注：</text>
+      <textarea wx:if="{{!showModal}}" bindinput="bindKeyInput" value='{{taskvalue}}' style="position: relative;z-index: -1;width:100%;height:80px;padding:10px;background:#fafafa;color:#333;padding-left:0;" placeholder='有什么附加条件吗？'></textarea>
+      <view wx:else>{{taskvalue}}</view>
+    </view>
+  </view>
+  <view wx:if="{{!fromPeriod&&fromHomeRepair}}">
+    <view class="orderItem">
+      <text class="text1">联 系 人：</text>
+      <text>{{address.linkman}}</text>
+    </view>
+    <view class="orderItem">
+      <text class="text1">联系电话：</text>
+      <text>{{address.contact_num}}</text>
+    </view>
+    <view class="orderItem" style="display: flex">
+      <text class="text1" style="white-space: nowrap">服务地址：</text>
+      <text style="flex:1;">{{address.loca_addr}}{{address.detail_addr}}</text>
+    </view>
+    <view class="orderItem">
+      <text class="text1">服务项目：</text>
+      <text>{{homeRepairShow.title}}</text>
+    </view>
+    <view class="orderItem">
+      <text class="text1">项目品牌：</text>
+      <text>{{homeRepairShow.brand}}</text>
+    </view>
+    <view class="orderItem">
+      <text class="text1">项目规格：</text>
+      <text>{{homeRepairShow.type}}</text>
+    </view>
+    <view class="orderItem">
+      <text class="text1">项目数量：</text>
+      <text>{{homeRepairShow.num}}{{homeRepairShow.unit}}</text>
+    </view>
+
+
+    <view class="orderItem">
+      <text class="text1">服务时间：</text>
+      <text>{{time}}</text>
+    </view>
+    <view class="orderItem " style="padding-bottom: 15rpx">
+      <text class="text1">服务人数：</text>
+      <text>1人</text>
+    </view>
+    <!--<button open-type="share" class="orderItem" style="position:static;text-align:start;border:none;height:auto;width:100%;padding-top:0;margin-top:20rpx;">-->
+    <!--<text>分享</text> <text style="color: #fff;font-size: 10px;margin-left: 20rpx;background:#fd2438;border-radius:24px;padding:0 10px;height:40rpx;line-height:40rpx;">分享成功可得优惠券</text>-->
+    <!--</button>-->
+    <navigator class="j_singlelist" url="/pages/my/Coupon?fromConfirmOrder=1" style="margin-top: 20rpx">
+      <view class="j_singleft viewWEBKIT" style="padding: 20rpx 0">
+        <text style="color:#333">优惠券</text>
+        <!--<image src='/images/icon10.png'></image>-->
+        <text style="padding-right:40rpx;">{{couponSelect}}</text>
+      </view>
+      <view class="jt" style="top: 20rpx;">
+        <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/jt.png'></image>
+      </view>
+    </navigator>
+    <view class="orderItem orderTotal">
+      <text>合计金额：</text>
+      <text style="color: #fd1438">￥{{totalPrice}}</text>
+    </view>
+
+    <view class="orderItem" style="padding-bottom:15rpx;">
+      <text style="padding:5px 0">备注：</text>
+      <textarea wx:if="{{!showModal}}" bindinput="bindKeyInput" value='{{taskvalue}}' style="position: relative;z-index: -1;width:100%;height:80px;padding:10px;background:#fafafa;color:#333;padding-left:0;" placeholder='有什么附加条件吗？'></textarea>
+      <view wx:else>{{taskvalue}}</view>
+      <!-- <input style="border:1px solid #ccc;"  bindinput="bindKeyInput" value='{{taskvalue}}' type="text" /> -->
+    </view>
+  </view>
+  <view wx:if="{{!fromPeriod&&!fromHomeRepair}}">
+    <view class="orderItem">
+      <text class="text1" style="width: 120rpx;">联系人：</text>
+      <text>{{address.linkman}}</text>
+    </view>
+    <view class="orderItem">
+      <text class="text1">联系电话：</text>
+      <text>{{address.contact_num}}</text>
+    </view>
+    <view class="orderItem" style="display: flex">
+      <text class="text1" style="white-space: nowrap">服务地址：</text>
+      <text style="flex:1;">{{address.loca_addr}}{{address.detail_addr}}</text>
+    </view>
+    <view class="orderItem">
+      <text class="text1">服务项目：</text>
+      <text>{{name}}</text>
+    </view>
+
+    <view class="orderItem" wx:if="{{yy1id==3}}">
+      <text class="text1">服务数量：</text>
+      <text>{{total_num}}小时</text>
+    </view>
+    <view class="orderItem" wx:if="{{yy1id!=3 && yy1id != 8}}">
+      <text class="text1">服务数量：</text>
+      <text>{{value}}{{homeRepairShow.unit}}</text>
+    </view>
+    <view class="orderItem" wx:if="{{yy1id == 8}}" wx:for="{{cmtype}}">
+      <text class="text1">服务内容：</text>
+      <text>{{item.set_meal_name}}/{{item.rd_unit}} * {{item.quant}}</text>
+    </view>
+
+
+
+    <!--<view class="orderItem " wx:if="{{yy1id!=1&&yy1id!=2}}">-->
+    <view class="orderItem " wx:if="{{yy1id!=1&&yy1id!=2&&yy1id!=8}}">
+      <text class="text1">服务人数：</text>
+      <text>{{service_num}}人</text>
+    </view>
+    <view class="orderItem " wx:if="{{yy1id==1&&yy1id==2}}">
+      <text class="text1">服务人数：</text>
+      <text>{{peopleNum}}人</text>
+    </view>
+    <view class="orderItem " wx:if="{{(yy1id==1||yy1id==2)&&clean_price!=''}}">
+      <text class="text1">毛巾使用：</text>
+      <text>{{clean_price}}</text>
+    </view>
+    <view class="orderItem" style="padding-bottom: 15rpx">
+      <text class="text1">服务时间：</text>
+      <text>{{time}}</text>
+    </view>
+
+
+    <!--<button open-type="share" class="orderItem" style="position:static;text-align:start;border:none;height:auto;width:100%;padding-top:0;margin-top:20rpx;">-->
+    <!--<text>分享</text> <text style="color: #fff;font-size: 10px;margin-left: 20rpx;background:#fd2438;border-radius:24px;padding:0 10px;height:40rpx;line-height:40rpx;">分享成功可得优惠券</text>-->
+    <!--</button>-->
+    <navigator class="j_singlelist" url="/pages/my/Coupon?fromConfirmOrder=1" style="margin-top: 20rpx">
+      <view class="j_singleft viewWEBKIT" style="padding: 20rpx 0">
+        <text style="color:#333">优惠券</text>
+        <!--<image src='/images/icon10.png'></image>-->
+        <text style="padding-right:40rpx;">{{couponSelect}}</text>
+      </view>
+      <view class="jt" style="top: 20rpx;">
+        <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/jt.png'></image>
+      </view>
+    </navigator>
+    <view class="orderItem orderTotal">
+      <text>合计金额：</text>
+      <text style="color: #fd1438;">￥{{totalPrice}}</text>
+    </view>
+    <view class="orderItem" style="padding-bottom:15rpx;">
+      <text style="padding:5px 0">备注：</text>
+      <textarea wx:if="{{!showModal}}" bindinput="bindKeyInput" value='{{taskvalue}}' style="position: relative;z-index: -1;width:100%;height:80px;padding:10px;background:#fafafa;color:#333;padding-left:0;" placeholder='有什么附加条件吗？'></textarea>
+      <view wx:else>{{taskvalue}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="singlefoot" bindtap="pay" wx:show="{{!showModal}}" style="position:fixed;bottom:0;background:#fff;">
+  <text style="color:#fd1438;text-align:right;flaot:left;width:70%;height:45px;line-height:45px;position：absolute;left:0;font-size:28rpx;">合计付款:￥{{totalPrice}}</text>
+  <button style="width:25%;margin:0;border-radius:0;position:absolute;right:0;bottom:0;">付款</button>
+</view>
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view bindtap="hideModal" style="text-align: right;padding: 20rpx 44rpx 0 0">
+    <icon type="clear" size="24" />
+  </view>
+  <view class="footerView">
+    <view style="color: #f00;font-size:16px;"> 实付金额：￥{{totalCalc}}</view>
+    <view style="color: #f00;font-size:16px;">支付剩余：{{minute}}:{{second}}</view>
+  </view>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}" wx:key="{{index}}" style="font-size: 16px">
+      <view>
+        {{item.value}}
+        <text style="display: inline-block;color: #fd1438" wx:if="{{item.name==0}}">（￥{{myBlance}}）</text>
+      </view>
+      <radio value="{{item.name}}" checked="{{item.checked}}" />
+    </label>
+  </radio-group>
+  <view class="confirmPay">
+    <form bindsubmit="confirmPay" report-submit="true">
+      <button form-type="submit">确认付款</button>
+
+    </form>
+  </view>
+
+</view>

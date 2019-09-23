@@ -1,0 +1,2 @@
+<!--pages/my/userPro.wxml-->
+<text style="background:#fff;padding:10px 15px;font-size:30rpx;line-height:45rpx;">{{proContent}}</text>

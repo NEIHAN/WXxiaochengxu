@@ -1,0 +1,172 @@
+<scroll-view scroll-y>
+  <navigator url="/pages/my/address" class="j_singletop">
+    <view class="j_singleft" style="height:32px;position: relative">
+      <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon4.png'></image>
+      <view class="linkman">
+        <text>{{address.linkman}}</text>
+        <text>{{address.contact_num}}</text>
+        <view class="defaultAddr" wx:if="{{address.is_default==1}}">默认</view>
+      </view>
+      <view class="address">
+        <text style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:1;overflow: hidden;">{{address.loca_addr}}{{address.detail_addr}}</text>
+        <text>{{address.square_num}}㎡</text>
+      </view>
+      <!-- <text>{{address.linkman}} {{address.contact_num}}</text>
+    <text>{{address.loca_addr}}{{address.detail_addr}}</text> -->
+    </view>
+    <view class="navigator-arrow"></view>
+  </navigator>
+
+  <view class="periodcenter ptlr15">
+
+    <view class='viewWEBKIT j_periodcflex' style="margin-bottom: 0;padding-bottom: 0;display: flex;justify-content: space-between;padding-left:0;">
+      <view class="text1" style="color: #fd1438;display: flex;justify-content: flex-start">
+        <view style="color: #fd1438;font-size: 28rpx;">{{responseData.sale_price}}元/{{responseData.unit}}</view>
+        <view style="height: 36rpx;display: inline-block;background-color: #fd1438;color: #fff;padding: 5rpx 10rpx 0;font-size: 10px;margin-left: 20rpx">{{detail.dis_name}}</view>
+      </view>
+      <view style="padding: 0" class="text2 viewL" bindtap="suggestFn">建议时长<image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/block.png'></image></view>
+    </view>
+    <!--<view class='viewL j_periodiclist'>-->
+    <!--<view class="hover"><text class="text1">家庭保洁</text><text>50.00/小时</text></view>-->
+    <!--<view class="mr"><text class="text1">家庭保洁</text><text>50.00/小时</text></view>-->
+    <!--</view>-->
+  </view>
+
+  <view class="periodcenter ptlr15">
+    <view class='viewWEBKIT j_periodcflex'>
+      <text class="text1">选择服务频次</text>
+    </view>
+    <view class='viewL j_periodiclist'>
+      <view data-name="{{item}}" bindtap="selectServiceType"  wx:key="{{index}}" wx:for="{{responseData.d_frequency}}" class="{{activePeriod==item?'hover':''}}"><text>{{item}}</text></view>
+
+    </view>
+    <view class="viewWEBKIT" style="border-top:1px solid #f7f5f5;padding-top:20rpx;margin-top:20rpx;">
+      <view class="viewtime1">选择服务时间</view>
+      <view class="viewL viewtest" >
+        <view class='viewtime2' bindtap="decreaseTime">-</view>
+        <text style="padding:0 15rpx;">{{serTime}}周</text>
+        <view class='viewtime3' bindtap="increaseTime">+</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="periodcenter ptlr15">
+    <view class="viewWEBKIT">
+      <view class="viewtime1">选择服务时长</view>
+      <view class="viewL viewtest">
+        <view class='viewtime2'bindtap="decreaseLong">-</view>
+        <text style="padding:0 15rpx;">{{serLong}}小时</text>
+
+        <view class='viewtime3' bindtap="increaseLong">+</view>
+      </view>
+    </view>
+  </view>
+  <view class="periodcenter ptlr15">
+    <view class="viewWEBKIT">
+      <view class="viewtime1">选择服务人数</view>
+      <view class="viewL viewtest">
+        <view class='viewtime2'bindtap="decreasePeople">-</view>
+        <text style="padding:0 15rpx;">{{serPeople}}人</text>
+
+        <view class='viewtime3' bindtap="increasePeople">+</view>
+      </view>
+    </view>
+  </view>
+  <view class="periodcenter ptlr15">
+    <view class="viewWEBKIT">
+      <view class="viewtime1">选择周期服务时间</view>
+      <view style="display: flex;justify-content: flex-end;width: 200rpx;height:50rpx;align-items:center;" class="viewL " bindtap="openTimePeriod">
+        <view class="triangle-facing-down"></view>
+      </view>
+    </view>
+    <view  wx:if="{{hourActive!==''}}">
+      {{weekActive}}/{{hourActive}}
+    </view>
+  </view>
+
+  <view wx:if="{{condition}}" class="citypickers">
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+      <view class="cityheader">
+        <view bindtap="closeTime" class="city-cancel">取消</view>
+        <view bindtap="sureTime" class="city-true">确定</view>
+      </view>
+      <picker-view-column>
+        <view wx:for="{{responseData.d_yytitle}}" style="line-height: 50px;text-align:center;font-size:30rpx;" wx:key="{{index}}">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{responseData.d_yytime}}"  style="line-height: 50px;text-align:center;font-size:30rpx;" wx:key="{{index}}">{{item}}</view>
+      </picker-view-column>
+
+    </picker-view>
+  </view>
+
+  <view class="periodcenter ptlr15">
+    <view class="viewWEBKIT">
+      <view class="viewtime1">选择第一次服务时间</view>
+      <view style="display: flex;justify-content: flex-end;width: 200rpx;height:50rpx;align-items:center;"  class="viewL " bindtap="openFirstDate">
+        <view class="triangle-facing-down"></view>
+      </view>
+    </view>
+    <view>
+      {{firstService}}
+    </view>
+  </view>
+
+  <view wx:if="{{firstDate&& hourActive!==''}}" class="citypickers">
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{firstServiceValue}}" bindchange="firstServiceChange" class="citybody">
+      <view class="cityheader">
+        <view bindtap="closeFirstDate" class="city-cancel">取消</view>
+        <view bindtap="sureFirstDate" class="city-true">确定</view>
+      </view>
+      <picker-view-column>
+        <view wx:for="{{firstServiceArr}}" style="line-height: 50px;font-size:30rpx;text-align:center;" wx:key="{{index}}">{{item.l_title}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  <view class="periodcenter ptlr15" style="margin-bottom: 200rpx">
+    <view class="viewWEBKIT" style="justify-content: flex-end;display: flex;color:#fd1438">
+      合计 ￥{{total}}
+    </view>
+  </view>
+</scroll-view>
+
+<!--底部按钮-->
+<view class="singlefoot">
+  <button bindtap="goPeriodPay">下一步</button>
+</view>
+
+<view id="suggestMask" hidden="{{suggestShow}}">
+    <view class="suggestBox">
+        <text class="suggestTitle">建议时长对照表</text>
+        <view class="table">
+            <view class="tr bg-w">
+              <view class="th">房屋面积</view>
+              <view class="th">建议时长</view>   
+            </view>
+            <view class="tr bg-w">
+             <view class="th">≤60㎡</view>
+              <view class="th">4小时</view>   
+            </view>
+            <view class="tr bg-w">
+              <view class="th">100㎡</view>
+              <view class="th">4~8小时</view> 
+            </view>
+            <view class="tr bg-w">
+              <view class="th">150㎡</view>
+              <view class="th">8~12小时</view>  
+            </view>
+            <view class="tr bg-w">
+              <view class="th">≥200㎡</view>
+              <view class="th">12小时以上</view> 
+            </view>   
+        </view>
+        <view class="interView">
+          <text>说明</text>
+          <text>1.所示时长为1人用时，2人则减半，超出时长线上补拍。</text>
+          <text>2.保洁选择时长根据不同的家庭面积、装修结构、布局以及基础卫生状况而定。</text>
+          <text>3.含擦玻璃选择时长根据楼层高低。玻璃框结构、玻璃大小、难易程度及基础卫生状况而定，玻璃如有贴膜，请提前告知，以便技师专业处理，避免擦拭期间划伤玻璃。</text>
+        </view>
+        <button bindtap="iKnow">我知道了</button>
+    </view>
+        
+</view>

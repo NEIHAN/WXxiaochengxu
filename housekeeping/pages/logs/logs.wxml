@@ -1,0 +1,21 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  
+
+  <view class="page-body">
+    
+    <view class="page-section">
+      
+      <view class="page-section-spacing">
+        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+          <view style='background:red;' id="demo1" class="scroll-view-item_H demo-text-1"></view>
+          <view style='background:blue;' id="demo2"  class="scroll-view-item_H demo-text-2"></view>
+          <view style='background:yellow;' id="demo3" class="scroll-view-item_H demo-text-3"></view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+
+</view>

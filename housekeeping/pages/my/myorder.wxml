@@ -1,0 +1,226 @@
+<view class="body" wx:if="{{!hasLogin}}">
+    <button style="margin-top:45%;width:100%;" open-type="getUserInfo" bindgetuserinfo="bindUser">授权登录</button>
+</view>
+<view class="body" wx:if="{{hasLogin}}"  style="-moz-user-select:none;-webkit-user-select:none">
+    <!--<navigator class="ptlr15" style='text-align:right;font-size:32rpx;' url='/pages/my/PeriodicOrder'>周期订单</navigator>-->
+
+    <view class="nav bc_white">
+        <view class="{{selected1?'red':'default'}}" bindtap="selected1">待付款</view>
+        <!--<view class="{{selected2?'red':'default'}}" bindtap="selected2">待预约</view>-->
+        <view class="{{selected3?'red':'default'}}" bindtap="selected3">待服务</view>
+        <view class="{{selected4?'red':'default'}}" bindtap="selected4">待评价</view>
+        <view class="{{selected5?'red':'default'}}" bindtap="selected5">已完成</view>
+    </view>
+
+ <view wx:if="{{orderList!=null && orderList.length==0}}"> 
+      <!--无订单时展示的状态-->
+      <view class="j_wdingd">
+          <image style="width: 161rpx;height: 117rpx;" src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/searchOrder.png"></image>
+          <text>订单空空如也，快去添加吧</text>
+      </view>
+  </view>
+    <view wx:if="{{orderList!=null && orderList.length>0}}">
+
+
+        <!--代付款-->
+        
+        <view wx:for="{{orderList}}" class="{{selected1?'show':'hidden'}}" wx:key="{{index}}">
+            <view class="j_subpayment">
+                <text class="tittle bblg1 plr10">{{item.S_order_type}}</text>
+                <!--<text class="tittle bblg1 plr10">{{item.order_type==1>'普通订单':'周期订单'}}</text>-->
+                <view  bindtap='toOrderDetail' data-orderId="{{item.order_id}}">
+                    <view class="orderHeader"  style="display: flex;padding: 20rpx">
+                        <image src="{{item.pro_buff}}"></image>
+                        <text style="padding-top:22rpx;">{{item.service_items}}</text>
+                        <text style="flex: 1;text-align: right;padding-top:22rpx;">￥{{item.order_total}}</text>
+
+                    </view>
+
+                </view>
+                <view class="tittle2 bblg1 plr10" bindtap='toOrderDetail' data-orderId="{{item.order_id}}">
+                    <text class="textcolor" style='border-bottom:0;padding-top:18rpx;padding-bottom: 8rpx'>数量：{{item.service_long}}</text>
+
+                    <!--共计1件商品-->
+                    <text class="textcolor">实付款：{{item.dis_amount}}元</text>
+                </view>
+                <navigator class="navigator" style='display: -webkit-box;padding:20rpx;-webkit-box-pack:end;'>
+                 <button class="mini-btn" size="mini" type="default" bindtap='toOrderDetail' data-orderId="{{item.order_id}}"  style="-moz-user-select:none;-webkit-user-select:none">查看详情</button>
+                    <button data-detail="{{item}}" bindtap="pay" class="mini-btn" size="mini" type="default">去付款</button>
+                </navigator>
+            </view>
+        </view>
+
+
+        <!--待预约-->
+        <!--<view class="{{selected2?'show':'hidden'}}">-->
+        <!--&lt;!&ndash;无订单时展示的状态&ndash;&gt;-->
+        <!--<view class="j_wdingd">-->
+        <!--<image src="/images/2.png"></image>-->
+        <!--<text>订单空空如也，快去添加吧</text>-->
+        <!--</view>-->
+        <!--</view>-->
+        <!--待服务-->
+        <view wx:for="{{orderList}}" class="{{selected3?'show':'hidden'}}" wx:key="{{index}}">
+            <view class="j_subpayment">
+            <view class="viewWEBKIT bblg1 plr10">
+                <text class="tittle ">{{item.S_order_type}}</text>
+                <text class="tittle tittle3 textcolor" >您的订单将在{{item.service_date}} {{item.service_time}} 上门</text>
+                
+            </view>
+                <view  bindtap='toOrderDetail' data-orderId="{{item.order_id}}">
+                    <view class="orderHeader"  style="display: flex;padding: 20rpx">
+                        <image src="{{item.pro_buff}}"></image>
+                        <text style="padding-top:22rpx;">{{item.service_items}}</text>
+                        <text style="flex: 1;text-align: right;padding-top:22rpx;">￥{{item.order_total}}</text>
+
+                    </view>
+
+                </view>
+                <view class="tittle2 bblg1 plr10" bindtap='toOrderDetail' data-orderId="{{item.order_id}}">
+                    <text class="textcolor" style='border-bottom:0;padding-top:18rpx;padding-bottom: 8rpx'>数量：{{item.service_long}}</text>
+
+                    <!--共计1件商品-->
+                    <text class="textcolor">实付款：{{item.dis_amount}}元</text>
+                </view>
+                 <view class="navigator" style='display: -webkit-box;padding:20rpx;-webkit-box-pack:end;'>
+                     <button class="mini-btn" size="mini" type="default" bindtap='toOrderDetail' data-orderId="{{item.order_id}}">查看详情</button>
+
+                     <button wx:if="{{item.back==0}}" bindtap='tuikuan' data-detail="{{item}}" data-id="{{item.id}}" data-orderId="{{item.order_id}}" class="mini-btn" size="mini" type="default">申请退款</button>
+                    <button wx:if="{{item.back==0}}" class="mini-btn" size="mini" bindtap='wancheng' data-id="{{item.id}}" data-orderId="{{item.order_id}}" type="default"> 完成服务</button>
+                    <text wx:if="{{item.back==1}}">退款进行中</text>
+                    <text wx:if="{{item.back==2}}" style="color:green">退款已完成</text>
+                </view>
+                <!--<view class="tittle bblg1 plr10">-->
+                    <!--<image src='/images/test.png'></image>-->
+                    <!--家庭保洁-->
+                <!--</view>-->
+                <!--<text class="tittle plr10">家庭保洁</text>-->
+                <!--<view class="j_subwebkit bblg1  pbt10" style="padding-top:0;padding-bottom:20rpx;">-->
+                    <!--<view class="j_left plr10">-->
+                        <!--<text>空房保洁</text>-->
+                    <!--</view>-->
+                    <!--<view class="j_right plr10">-->
+                        <!--<text>数量:2小时</text>-->
+                    <!--</view>-->
+                <!--</view>-->
+                <!--<view class="tittle2 bblg1 plr10" style="padding-top:20rpx;">共计1件商品-->
+                    <!--<text>实付款：150元</text>-->
+                <!--</view>-->
+                <!--<navigator class="navigator" style='display: -webkit-box;padding:20rpx;-webkit-box-pack:end;'>-->
+                    <!--<button class="mini-btn" size="mini" type="default">加单</button>-->
+                    <!--<button class="mini-btn" size="mini" type="default">取消预约</button>-->
+                <!--</navigator>-->
+            </view>
+        </view>
+
+
+        <view wx:for="{{orderList}}" class="{{selected4?'show':'hidden'}}" wx:key="{{index}}">
+            <view class="j_subpayment">
+                <text class="tittle bblg1 plr10">{{item.S_order_type}}</text>
+                <!--<text class="tittle bblg1 plr10">{{item.order_type==1>'普通订单':'周期订单'}}</text>-->
+                <view  bindtap='toOrderDetail' data-orderId="{{item.order_id}}">
+                    <view class="orderHeader"  style="display: flex;padding: 20rpx">
+                        <image src="{{item.pro_buff}}"></image>
+                        <text style="padding-top:22rpx;">{{item.service_items}}</text>
+                        <text style="flex: 1;text-align: right;padding-top:22rpx;">￥{{item.order_total}}</text>
+
+                    </view>
+
+                </view>
+                <view class="tittle2 bblg1 plr10" bindtap='toOrderDetail' data-orderId="{{item.order_id}}">
+                    <text class="textcolor" style='border-bottom:0;padding-top:18rpx;padding-bottom: 8rpx'>数量：{{item.service_long}}</text>
+
+                    <!--共计1件商品-->
+                    <text class="textcolor">实付款：{{item.dis_amount}}元</text>
+                </view>
+                <navigator url="evaluate?id={{item.id}}&&order_id={{item.order_id}}" class="navigator" style='display: -webkit-box;padding:20rpx;-webkit-box-pack:end;'>
+                    <button class="mini-btn" size="mini" type="default" bindtap='toOrderDetail' data-orderId="{{item.order_id}}">查看详情</button>
+
+                    <button class="mini-btn" size="mini" type="default">去评价</button>
+                </navigator>
+            </view>
+        </view>
+
+
+
+        <!--<view class="{{selected4?'show':'hidden'}}">for activity4</view>-->
+        <!--已评价-->
+        <view wx:for="{{orderList}}" wx:key="{{index}}" class="{{selected5?'show':'hidden'}}">
+            <view class="j_subpayment">
+              <view class="viewWEBKIT bblg1 plr10">
+                <text class="tittle">{{item.S_order_type}}</text>
+                <text class="tittle tittle3 "wx:if="{{item.back==2}}" style="color: #333">已退款</text>
+                <text class="tittle tittle3 " style="color: #333" wx:else>{{item.desc}}</text>
+
+              </view>
+                
+                <!--<text class="tittle bblg1 plr10">{{item.order_type==1>'普通订单':'周期订单'}}</text>-->
+                <view  bindtap='toOrderDetail' data-orderId="{{item.order_id}}">
+                    <view class="orderHeader"  style="display: flex;padding: 20rpx">
+                        <image src="{{item.pro_buff}}"></image>
+                        <text style="padding-top:22rpx;">{{item.service_items}}</text>
+                        <text style="flex: 1;text-align: right;padding-top:22rpx;">￥{{item.order_total}}</text>
+
+                    </view>
+
+                </view>
+                <view class="tittle2 bblg1 plr10" bindtap='toOrderDetail' data-orderId="{{item.order_id}}" style="display: flex;justify-content: space-between">
+                    <button style="margin-top: 36rpx" class="mini-btn" size="mini" type="default" bindtap='toOrderDetail' data-orderId="{{item.order_id}}">查看详情</button>
+                    <view style="flex: 1">
+                        <text class="textcolor" style='border-bottom:0;padding-top:18rpx;padding-bottom: 8rpx'>数量：{{item.service_long}}</text>
+
+                        <!--共计1件商品-->
+                        <text class="textcolor">实付款：{{item.dis_amount}}元</text>
+                    </view>
+
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+<view class="modal-dialog" wx:if="{{showModal}}">
+    <view bindtap="hideModal" style="text-align: right;padding: 20rpx 44rpx 0 0"><icon type="clear" size="24" /></view>
+
+    <view class="footerView">
+        <view  style="color: #f00;font-size:16px;">实付金额：￥{{params.dis_amount}}</view>
+    </view>
+    <radio-group class="radio-group" bindchange="radioChange" style="font-size: 16px">
+        <label class="radio" wx:for="{{items}}" wx:key="{{index}}">
+            {{item.value}}<radio value="{{item.name}}" checked="{{item.checked}}"/>
+        </label>
+    </radio-group>
+    <view class="confirmPay">
+        <form bindsubmit="confirmPay" report-submit="true">
+            <button form-type="submit">确认付款</button>
+        </form>
+    </view>
+
+</view>
+<view class="modal-mask"  catchtouchmove="preventTouchMove" wx:if="{{refundShow}}"></view>
+<view class="refundContainer" wx:if="{{refundShow}}">
+    <view style="padding: 30rpx 0;color: #999">请选择退款原因</view>
+    <view data-reason="{{item}}" bindtap="refundMoney" wx:for="{{reason}}" wx:key="{{index}}" class="reasonItem">{{item}}</view>
+    <view class="cancelReason" bindtap="cancelReason">取消</view>
+</view>
+<view wx:if="{{tuikuaning}}" style="width: 100%;">
+    <view catchtouchmove="preventTouchMove" style="position: fixed;top: 0;width: 100%;background-color: rgba(0,0,0,.7);height: 100vh;z-index: 22">
+
+    </view>
+    <view style="border-radius: 8px;  position: fixed;left: 50%;transform: translate(-50%,-50%);top: 50%;z-index: 9999999;width: 80%;background-color: #fff;">
+        <view style="padding:80rpx 0;font-size:16px;text-align:center;">您确定要申请退款吗？</view>
+        <view  class="refundBtn">
+            <form bindsubmit="confirmPayRefund"  bindreset="cancelRefund" >
+                <input style="width: 0" name="input" placeholder="please input here" />
+                <view style="display: flex">
+                    <button name="aaa" formType="reset" style="width: 50%">再想想</button>
+                    <button  name="bbb" formType="submit" style="width: 50%;background-color: #fd1438;color: #fff">是的</button>
+                </view>
+
+            </form>
+        </view>
+
+    </view>
+</view>
+

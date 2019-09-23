@@ -1,0 +1,15 @@
+<!--<swiper class="swiper" indicator-dots="true" autoplay="false" interval="5000" duration="1000">    -->
+  <!--<block wx:for="{{movies}}" wx:key="{{index}}">-->
+    <!--<swiper-item>    -->
+      <!--<image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    -->
+    <!--</swiper-item>    -->
+  <!--</block>    -->
+<!--</swiper>   -->
+
+
+<view class="j_homeremain" wx:for="{{responseData}}" wx:key="{{index}}">
+  <text class='text1 textcolor'>{{item.catname}}</text>
+  <view class='j_reparnav' >
+    <view bindtap="goDetail" data-id="{{child.id}}" class="item" wx:for="{{item.list}}"wx:for-item="child" wx:for-index="child_index" wx:key="{{child_index}}">{{child.catname}}</view>
+  </view>
+</view>

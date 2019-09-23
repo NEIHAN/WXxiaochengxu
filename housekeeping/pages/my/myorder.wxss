@@ -1,0 +1,188 @@
+/* pages/my/myorder.wxss */
+.nav{width:100%;height:80rpx;display:flex;flex-direction:row;background-color:#fff;}
+.default{line-height:80rpx;text-align:center;flex:1;border-bottom:1px solid gainsboro;color:#666;font-size:28rpx;}
+.red{line-height:80rpx;text-align:center;
+  color:#ffffff;
+  background-color: #fd1438;
+  flex:1;
+  font-size:28rpx;}
+.show{display:block;}
+.hidden{display:none;}
+image{
+  display: block;
+}
+.j_subpayment{
+  background-color:#fff;
+  margin-top:20rpx;
+  padding-top: 10rpx;
+}
+.j_subpayment .tittle{
+  display: block;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}
+.j_subwebkit{
+  display: -webkit-box;
+  -webkit-box-pack:justify;
+  padding-bottom:0;
+  padding-top: 20rpx;
+}
+.j_subwebkit .j_left{
+  display: -webkit-box;
+}
+.orderHeader{
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.orderHeader image{
+  width:80rpx;
+  height: 80rpx;
+  display: block;
+  /*border:1px solid #fd1438;*/
+  margin-right: 20rpx;
+  border-radius:50%;
+}
+.j_subwebkit .j_left text{
+  font-size:28rpx;
+  padding-top: 22rpx;
+}
+.j_subwebkit .j_right{}
+.j_subwebkit .j_right text{
+  text-align: right;
+  font-size: 28rpx;
+}
+.j_subpayment .tittle2{
+
+  padding:0rpx 20rpx 12rpx;
+}
+.j_subpayment .tittle2 text{
+  padding-left:30rpx;
+  font-size:28rpx;
+}
+/*/无订单时*/
+.j_wdingd{
+  margin:200rpx auto;
+}
+.j_wdingd image{
+  width:100rpx;
+  height:100rpx;
+  margin:auto;
+}
+.j_wdingd text{
+  text-align: center;
+  line-height:60rpx;
+}
+/*待服务*/
+.j_subpayment .tittle3{
+  -webkit-box-pack:end;
+  font-size:26rpx;
+  color:#fd1438;
+}
+.j_subpayment .tittle{
+  display: -webkit-box;
+  -webkit-box-align:center;
+}
+.j_subpayment .tittle image{
+  width:40rpx;
+  height: 40rpx;
+  margin-right:16rpx;
+}
+.navigator button{
+  margin-left: 20rpx;
+}
+/*已评价*/
+.navi{
+  display: -webkit-box;
+  -webkit-box-pack:end;
+  margin-right: 30rpx;
+}
+.navi navigator{
+  margin-left:30rpx; 
+}
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.footerView{
+  color: red;
+}
+.footerView,.radio{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 30rpx;
+}
+.radio-group{
+  display: flex;
+  flex-direction: column;
+}
+.confirmPay{
+  padding: 30rpx;
+
+}
+.confirmPay button{
+  background: red;
+  color: #fff;
+}
+.refundContainer{
+  position: fixed;
+  z-index: 9999;
+  background-color: #fff;
+  border-radius: 8px;
+  width:80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+.reasonItem{
+  padding: 30rpx;
+  text-align: center;
+  border-top: 1px solid #d4d4d4;
+  color: #333;
+  font-weight: bold;
+
+}
+.cancelReason{
+  background-color: #fd1438;
+  padding: 20rpx 0;
+  font-size: 18px;
+  color: #fff;
+}
+.bblg1{
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.textcolor{
+  font-size: 12px !important;
+  color: #999;
+  text-align: end;
+}
+.refundBtn button::after {
+  border-radius: 0;
+}
+.refundBtn button{
+  border-radius: 0;
+}
+button[size=mini]{
+  padding: 0 25rpx;
+}

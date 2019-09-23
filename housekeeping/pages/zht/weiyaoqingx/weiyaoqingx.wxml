@@ -1,0 +1,130 @@
+<!--pages/zht/yiqiandao/yiqiandao.wxml-->
+<view class='totality'>
+<!--头图-->
+ <view class='toutu'>
+   <image class='toutu_img' src='https://www.zaihush.com/public/images/diwen.png'></image>
+ </view>
+<!--提示-->
+ <view class='tishi'> <image src='https://www.zaihush.com/public/images/yiwen.png' class='tishi_img'></image><text>规则说明</text> </view>
+ <view class='tishi_one'><text class='tishi_one_text'>积分明细</text> <image src='https://www.zaihush.com/public/images/kaobei.png' class='tishi_kaobei'></image> </view>
+<!--白框-->
+ <view class='white'>
+<!--时间-->
+   <view class='time'>
+       <text class='time_shijian'>今日</text>
+       <text class='time_shijian'>3.14</text>
+       <text class='time_shijian'>3.15</text> 
+       <text class='time_shijian'>3.16</text>
+       <text class='time_shijian'>3.17</text>
+       <text class='time_shijian'>3.18</text>
+       <text class='time_shijian'>3.19</text>
+   </view>
+ <!--时间柱-->
+   <view class='timecolumn'>
+       <text class='timecolumn_column_one'></text>
+       <text class='timecolumn_column'></text>
+   </view>
+<!--签到加分球-->
+   <view class='ball'>
+      <view class='circle'><image src='https://www.zaihush.com/public/images/duigou.png' class='circle_img'></image> </view>
+      <view class='circle'><image src='https://www.zaihush.com/public/images/duigou.png' class='circle_img'></image> </view>
+      <text class='sort'>+3</text>
+      <text class='sort'>+4</text>
+      <text class='sort'>+5</text>
+      <text class='sort'>+6</text>
+      <text class='sort'>+7</text>
+   </view>
+<!--已连续签到-->
+   <view class='sign'>
+       <text class='sign_shuzi'>724</text>
+       <text class='sign_jifen'>可用积分</text>
+       <view class='sign_yellow'></view>
+       <text class='sign_jifen_one'>可抵扣</text>
+       <text class='sign_qian'>7.24</text>
+       <text class='sign_time'>1</text>
+       <text class='sign_tian'>天</text> 
+       <text class='sign_qiandao'>连续签到</text>
+   </view>
+<!--button-->
+
+   <button class='button'>已签到</button>
+ </view>
+<!--图片-->
+ <view class='picture'>
+   <image src='https://www.zaihush.com/public/images/yaoqing.png' class='picture_img'></image>
+ </view>
+<!--分割线-->
+ <view class='fgx'></view>
+<!--列表-->
+   <view class='list'>
+     <text class='list_title'>赚积分，抵现金</text>
+     <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/qiandao.png' class='list_white_img'></image>
+      <text class='list_white_qiandao'>每日签到</text>
+      <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+      <text class='list_white_shuzi'>20积分</text>
+      <text class='list_white_shuzi_one'>每日签到即可获得奖励</text>
+<navigator url='/pages/zht/yiqiandao/yiqiandao'>
+      <button class='list_white_button_gray'>去完成</button>
+</navigator>
+     </view>
+
+
+      <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/fenxiang.png' class='list_white_img'></image>
+      <text class='list_white_qiandao'>每日签到</text>
+      <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+      <text class='list_white_shuzi'>20积分</text>
+      <text class='list_white_shuzi_one'>每日签到即可获得奖励</text>
+      <button class='list_white_button'>去分享</button>
+     </view>
+
+
+
+
+      <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/gongzhonghao.png' class='list_white_img'></image>
+      <text class='list_white_qiandao'>每日签到</text>
+      <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+      <text class='list_white_shuzi'>20积分</text>
+      <text class='list_white_shuzi_one'>每日签到即可获得奖励</text>
+      <button class='list_white_button'>去关注</button>
+     </view>
+
+
+
+
+      <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/yaoqing2.png' class='list_white_img'></image>
+      <text class='list_white_qiandao'>每日签到</text>
+      <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+      <text class='list_white_shuzi'>20积分</text>
+      <text class='list_white_shuzi_one'>每日签到即可获得奖励</text>
+<navigator url='/pages/zht/weiyaoqing/weiyaoqing'>
+      <button class='list_white_button'>去邀请</button>
+</navigator>
+     </view>
+
+
+
+      <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/xiandan.png' class='list_white_img'></image>
+      <text class='list_white_qiandao'>每日签到</text>
+      <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+      <text class='list_white_shuzi'>20积分</text>
+      <text class='list_white_shuzi_one'>每日签到即可获得奖励</text>
+      <button class='list_white_button'>去下单</button>
+     </view>
+
+    <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/pingjia.png' class='list_white_img'></image>
+      <text class='list_white_qiandao'>每日签到</text>
+      <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+      <text class='list_white_shuzi'>20积分</text>
+      <text class='list_white_shuzi_one'>每日签到即可获得奖励</text>
+      <button class='list_white_button'>去评价</button>
+     </view>
+  </view>
+
+</view>
+

@@ -1,0 +1,7 @@
+<!--pages/my/feedBack.wxml-->
+<view class="feedBack">
+    <textarea placeholder='请填写您的建议' class="textBack" maxlength="{{noteMaxLen}}" bindinput="bindWordLimit">
+      <text>{{currentNoteLen|0}}/{{noteMaxLen}}</text>
+    </textarea>
+    <button bindtap="sendFeedBack">发送</button>
+</view>

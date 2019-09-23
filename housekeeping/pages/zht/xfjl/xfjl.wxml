@@ -1,0 +1,26 @@
+<!--pages/zht/xfjl/xfjl.wxml-->
+<view  style="width:100%;height:100%;padding-bottom:120rpx;">
+
+ <view class="row">
+  <text class='white'>获得记录</text>
+  <text class='red'>消费记录</text>
+  
+</view>
+<view class='fgx'></view>
+ <view class='title'>
+   <text class='title_list'>夜间保洁</text>
+   <text class='title_time'>2019-03-19  14 : 06 : 46</text>
+   <text class='title_shuzi'>-84元</text>
+ </view>
+ <view class='fgx_one'></view>
+<!--已加载--->
+ <view class='jiazai'>
+  <text class='jiazai_font'>已加载全部</text>
+ 
+ </view>
+
+
+
+
+</view>
+

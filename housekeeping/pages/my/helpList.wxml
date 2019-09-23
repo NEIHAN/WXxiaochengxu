@@ -1,0 +1,10 @@
+<block wx:for="{{questionList}}" wx:key="{{index}}">
+<navigator url='/pages/my/questionDetail?problem={{item.problem}}&id={{item.id}}'>
+<view class="helplist">{{item.problem}}</view>
+</navigator>
+
+    </block>
+    <view style="position:fixed;bottom:20rpx;left:10%;width:80%;height:40px;line-height:40px;background:#fd1438;border-radius:4px;">
+        <navigator url="/pages/my/feedBack" style="text-align:center;font-size:32rpx;color:#fff;">意见反馈</navigator> 
+        
+    </view>

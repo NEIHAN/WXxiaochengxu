@@ -1,0 +1,24 @@
+/* pages/my/questionDetail.wxss */
+page{
+  background-color:#fff;
+}
+.j_question{
+  margin-bottom:20rpx;
+  margin-top:100px;
+}
+.j_question view{
+  font-size:32rpx;
+  color: #333;
+}
+
+.j_question .col-1{
+  color: #fd1438;
+}
+.j_detail view{
+  color:#999;
+  font-size: 32rpx;
+  line-height: 48rpx;
+}
+.j_detail .col-1{
+  color: green;
+}

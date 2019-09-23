@@ -1,0 +1,39 @@
+/* pages/index/addLocation.wxss */
+#addLocation{
+  width:100%;height:100%;
+}
+.addContent{
+  width:94%;padding:0 3%;
+  height:30px;border-bottom:1px solid #efefef;background:#fff;
+}
+.addContent text{
+  font-size:14px;
+  float:left;
+  width:20%;
+  line-height:30px;
+}
+.addContent .inputTxt{
+  float:left;width:70%;height:30px;margin-left:5%;color:#707070;
+}
+.labelBox{
+  height:40px;
+}
+.addContent .radioBtn{
+  width:60%;height:30px;margin:auto;display:block;line-height:40px;
+}
+
+.addContent .radioBtn .radio{
+  margin-left:15px;
+}
+.addContent .radioBtn .radio radio{
+  margin-right:5px;
+}
+
+
+.saveLocation{
+  display:block;
+  width:80%;height:40px;
+  line-height:40px;
+  background:#fd2438;
+  color:#fff;margin:20px auto;
+}

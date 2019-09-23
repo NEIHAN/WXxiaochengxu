@@ -1,0 +1,104 @@
+.homerepair_title{
+    padding: 20rpx;
+    padding-bottom: 10rpx;
+    color: #333333;
+    font-size: 32rpx;
+    background-color:#fff;
+}
+.homerepair_detail{
+    display: flex;
+   padding: 0 20rpx;
+    justify-content: space-between;
+    padding-top:0;
+    background-color:#fff;
+    margin-bottom:10rpx;
+
+}
+.homerepair_detailDesc {
+    display: flex;
+    font-size: 14px;
+}
+.homerepair_goMoney{
+    font-size: 14px;
+    color: #fd1438;
+}
+.homerepair_tip{
+    font-size: 10px;
+    color: #fd1438;
+    margin-left: 2rpx;
+    line-height:18px;
+}
+.j_jieshaofoot{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    left:0px;
+    background-color:#fff;
+    border-top:1px solid #f5f5f5;
+    padding:10rpx 0;
+    display: flex;
+    justify-content: space-around;
+}
+.j_jieshaofoot navigator{
+    height: 80rpx;
+    -webkit-box-flex:1;
+    color: #fff;
+    width: 540rpx;
+    text-align: center;
+    font-size: 34rpx;
+    border-radius:6rpx;
+    line-height: 80rpx;margin-left:20rpx;
+}
+.j_jieshaofoot .button1{
+    height: 80rpx;
+    -webkit-box-flex:1;
+    color: #fff;
+    width: 540rpx;
+    text-align: center;
+    font-size: 34rpx;
+    border-radius:6rpx;
+    line-height: 80rpx;margin-left:20rpx;
+}
+.j_jieshaofoot .button2{
+    height: 80rpx;
+    -webkit-box-flex:1;
+    width: 160rpx;
+    text-align: center;
+    font-size: 34rpx;
+    border-radius:6rpx;
+    line-height: 80rpx;
+}
+.nav{height:50rpx;display:flex;flex-direction:row;border:1px solid #fd1438;margin:0rpx 180rpx 10rpx;border-radius:8rpx;
+    background-color:#fff;
+}
+.red{line-height:50rpx;text-align:center;flex:1;color:#fff;
+    font-size:30rpx;background-color:#fd1438;
+}
+.default{
+    line-height:50rpx;text-align:center;color:#fd1438;flex:1;
+    font-size:30rpx;
+}
+.show{display:block;padding-bottom:60px;}
+.hidden{display:none;}
+
+.star{
+    width:20px;
+    height:20px;
+    margin-right: 10rpx;
+    vertical-align: top;
+    margin-bottom:5rpx;
+}
+.J_pingjiatop{
+    background: #fff;
+    margin-bottom:20rpx;
+}
+.J_pingjiatop .text1{
+    font-size: 34rpx;
+    margin-bottom:20rpx;
+}
+.viewWEBKIT text{
+    color:#666;
+}
+.shareBtn::after{
+    display:none
+}

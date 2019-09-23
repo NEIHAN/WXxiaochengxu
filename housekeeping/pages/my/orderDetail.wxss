@@ -1,0 +1,93 @@
+#orderDetail{
+  width:100%;
+  height:100%;
+}
+.orderTop{
+  background:#fd1438;
+  padding:14px;
+}
+.orderTop text{
+  color:#fff;
+  font-size:16px;
+}
+.order_info{
+  height: auto;
+  width:100%;
+  display:table;
+  border-bottom:4px dashed #fd1438;
+  position:relative;
+  background:#fff;
+}
+.info_name{
+  font-size:16px;
+  height:30px;
+}
+.info_name text{
+  float:left; margin:5px 10px;font-size:14px;
+}
+.order_size{
+  position:absolute;
+  right:0;
+}
+.order_address{
+  height:30px;width:100%;clear:both;
+}
+.order_address text{
+  font-size:14px;margin-left:10px;line-height:30px;
+}
+.orderList{
+  width:100%;height:auto;display:table;
+  margin-top:10px;
+}
+.serviceList{
+  height:40px;
+  font-size:16px;line-height:40px;padding-left:10px;
+  border-bottom:1px solid #efefef;background:#fff;
+}
+.orderContent{
+  width:100%;height:auto;display:table;line-height:30px;background:#fff;
+}
+.orderTitle{
+  font-size:14px;margin-left:10px;
+}
+.serviceContent{
+  background: #fff;
+  width:100%;
+  height:auto;
+  display:table;position:relative;
+}
+.serviceContent .orderImg{
+  display:block;
+  width:80px;
+  height:80px;
+  float:left;
+  margin:5px 10px;
+}  
+.serTitle{
+  font-size:16px;margin-top:5px;
+}
+.subTitle{
+  font-size:14px;margin-top:20px;
+}
+.number{
+  position:absolute;right:10px;bottom:7px;
+}
+.order_number{
+  background:#fff;margin-top:10px;height:30px;border-bottom: 1px solid #efefef;
+}
+.order_number text{
+  font-size:14px;line-height:30px;margin-left:10px;
+}
+.order_time{
+  background:#fff;height:30px;border-bottom: 1px solid #efefef;
+}
+.order_time text{
+  font-size:14px;line-height:30px;margin-left:10px;
+}
+.order_price{
+  background:#fff;height:30px;text-align:right;line-height:30px;font-size:14px;
+}
+.order_price text{
+  font-size:14px;float:right;line-height:30px;margin-right:10px;color:#fd1438;
+  font-weight: 600;
+}

@@ -1,0 +1,370 @@
+<scroll-view scroll-y>
+  <navigator url="/pages/my/address" class="j_singletop">
+    <view class="j_singleft" style="height:32px;">
+      <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon4.png'></image>
+      <view wx:if="{{address.linkman==''||address.linkman==null}}" style="color: #999;text-align: center;padding-top:5px;">
+        请添加您的服务地址~
+      </view>
+      <block wx:else>
+        <view class="linkman">
+          <text>{{address.linkman}}</text>
+          <text>{{address.contact_num}}</text>
+          <view class="defaultAddr" wx:if="{{address.is_default==1}}">默认</view>
+        </view>
+        <view class="address">
+          <text class="loca_addr" style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;">{{address.loca_addr}}{{address.detail_addr}}</text>
+          <text>{{address.square_num}}㎡</text>
+        </view>
+      </block>
+
+    </view>
+    <view class="navigator-arrow" style="top:-29rpx;"></view>
+  </navigator>
+  <view class="periodcenter ptlr15" wx:if="{{d.yy1_id!=0 && d.yy1_id!=8}}" style="padding-bottom: 0">
+    <view class='viewWEBKIT j_periodcflex' style="margin-bottom: 10rpx;padding-bottom: 10rpx;display: flex;justify-content: space-between;padding-left:0;">
+      <view class="text1" style="color: #fd1438;display: flex;justify-content: flex-start">
+        <view style="color: #fd1438;font-size: 28rpx;">{{detailAll.sale_price}}元/{{detailAll.unit}}</view>
+        <view style="height: 40rpx;display: inline-block;background-color: #fd1439;color: #fff;padding: 5rpx 10rpx 0;font-size: 12px;margin-left: 20rpx">{{detailAll.dis_name}}</view>
+      </view>
+      <view style="padding: 0" class="text2 viewL" bindtap="suggestFn">建议时长
+        <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/block.png'></image>
+      </view>
+    </view>
+
+  </view>
+  <view style="display: flex;justify-content: space-between;padding:30rpx 24rpx;margin-bottom: 20rpx;background-color: #fff" data-id="{{d.catname}}" data-yyid="{{d.yy1_id}}" bindtap="goCleaningPrj" wx:if="{{d.yy1_id==3||d.yy1_id==5||d.yy1_id==4}}">
+    <view style="display: flex;justify-content: flex-start">
+      <!-- <image src='/images/icon9.png'></image>-->
+      <view style="font-size: 28rpx;margin-left: -4rpx">
+        {{projectSelect}}
+      </view>
+    </view>
+    <view class="navigator-arrow"></view>
+  </view>
+  <view wx:if="{{d.yy1_id!=8}}" style="display: flex;justify-content: space-between;padding:30rpx 24rpx;margin-bottom: 20rpx;background-color: #fff" data-cid="{{detail.d_type_id}}" data-yyid="{{d.yy1_id}}" bindtap="gofuwushijian" url="/pages/index/fuwushijian?c_id={{detail.d_type_id}}&&yy1_id={{d.yy1_id}}">
+    <view style="display: flex;justify-content: flex-start">
+      <!-- <image src='/images/icon9.png'></image>-->
+      <view style="font-size: 28rpx;margin-left: -4rpx">
+        {{serviceTime}}
+      </view>
+      <view style="font-size: 28rpx" wx:if="{{d.yy1_id==1||d.yy1_id==2}}"> {{valueTime}}{{peopleNum}}</view>
+
+    </view>
+
+    <view class="navigator-arrow"></view>
+  </view>
+
+  <view wx:if="{{d.yy1_id==8}}" style="display: flex;justify-content: space-between;padding:30rpx 24rpx;margin-bottom: 20rpx;background-color: #fff" data-cid="0" data-yyid="{{d.yy1_id}}" bindtap="gofuwushijian" url="/pages/index/fuwushijian?c_id=0&&yy1_id={{d.yy1_id}}">
+    <view style="display: flex;justify-content: flex-start">
+      <!-- <image src='/images/icon9.png'></image>-->
+      <view style="font-size: 28rpx;margin-left: -4rpx">
+        {{serviceTime}}
+      </view>
+      <view style="font-size: 28rpx" wx:if="{{d.yy1_id==1||d.yy1_id==2}}"> {{valueTime}}{{peopleNum}}</view>
+
+    </view>
+
+    <view class="navigator-arrow"></view>
+  </view>
+
+  <view class='list' wx:if="{{d.yy1_id==8}}">
+    <view class='lists' wx:for="{{cmtype}}">
+       <view class='lists_title'>
+          <text class='lists_name' style="font-size:28rpx;">{{item.set_meal_name}}</text>
+          <text class='lists_name' style='color: #f00;font-size:28rpx;'>单价：{{item.prices[item.quant==0?0:item.quant > item.prices.length?item.prices.length - 1:item.quant - 1]}}元/{{item.rd_unit}}<text class="rdtext" style="font-size:12px;">({{item.rd_text}})</text></text>
+          
+           <text class='lists_name' style='text-decoration:line-through; font-size:28rpx;margin-bottom:14px;color:#999;'>原价：{{item.rd_zprice}}元</text>
+       </view>
+       <!--
+       <view style="display: flex" class="calcContainer1">
+          <view class="numCalc" bindtap="rdNum" data-index='{{index}}'> -</view>
+          <view style="margin: 0 15rpx;font-size:28rpx;">{{item.quant}}</view>
+          <view style="border-right: none;border-left: 1px solid #d2ccc3;"  class="numCalc" bindtap='rdCalc' data-index='{{index}}'>+</view>
+         </view>
+         -->
+         <view style="display: flex" class="calcContainer2">
+            <view class="numCalc" bindtap="rdNum" data-index='{{index}}'> -</view>
+            <view style="margin: 0 15rpx;font-size:28rpx;">{{item.quant}}</view>
+            <view style="border-right: none;border-left: 1px solid #d2ccc3;" class="numCalc"  bindtap='rdCalc' data-index='{{index}}'>+</view>
+          </view>
+      </view>
+  </view>
+
+  <view wx:if="{{d.yy1_id==0}}">
+    <view class="detailPrj">
+
+      <image src='{{detail.pic}}' style="margin-top: 20rpx; width: 100rpx; height: 100rpx;position: static;transform: none;"></image>
+      <view class="rightContainer">
+        <view class="title" style="font-size:32rpx;">{{detail.c_name}}</view>
+        <!--<view class="tip">{{detail.c_tip}}</view> c_bomlimit   -->
+        <view class="footer">
+          <view style="display: flex;margin-top: 6rpx">
+            <view class="price" style="font-size:28rpx;margin-left: -4rpx">￥{{detail.c_zprice}}</view>
+            <view class="c_text">{{detail.c_text}}</view>
+          </view>
+          <view style="display: flex" class="calcContainer">
+            <view class="numCalc" bindtap="decreaseNum"> -</view>
+            <view style="margin: 0 15rpx;font-size:28rpx;">{{prjNum}}台</view>
+            <view style="border-right: none;border-left: 1px solid #d2ccc3;" class="numCalc" bindtap="increaseNum">+</view>
+          </view>
+
+        </view>
+      </view>
+
+
+    </view>
+
+    <view class='viewWEBKIT j_periodcflex' style="margin-bottom: 0">
+      <text class="text1">请选择品牌</text>
+    </view>
+    <view class='viewL j_periodiclist' style="padding-bottom:0;">
+      <view data-name="{{item}}" bindtap="selectBrand" wx:key="{{index}}" wx:for="{{detail.c_brand}}" class="liItem  {{activeBrand==item?'hover':''}}">
+        <text>{{item}}</text>
+      </view>
+
+    </view>
+    <view class='viewWEBKIT j_periodcflex' style="margin-bottom: 0">
+      <text class="text1">请选择类型</text>
+    </view>
+    <view class='viewL j_periodiclist' style="padding-bottom:0;">
+      <view data-name="{{item}}" bindtap="selectType" wx:key="{{index}}" wx:for="{{detail.c_type}}" class=" liItem {{activeType==item?'hover':''}}">
+        <text>{{item}}</text>
+      </view>
+
+    </view>
+    <view class="j_singlelist" style="margin-bottom: 100rpx">
+
+      <view class="j_singleft" style="text-align: right;">
+        <!--<image src='/images/icon8.png'></image>-->
+        <text style="color: #fd1438">合计金额：￥{{totalShow0}}</text>
+
+      </view>
+    </view>
+  </view>
+  <view class="j_singlelist" wx:if="{{d.yy1_id==1||d.yy1_id==2}}">
+
+    <view class="j_singleft">
+      <!--<image src='/images/icon8.png'></image>-->
+      <text>使用全新七色分区毛巾 （{{detail.cleaner_price}}元/{{detail.cleaner_unit}} ）</text>
+
+    </view>
+    <checkbox-group bindchange="serviceValChange">
+      <label class="checkbox">
+        <checkbox value="coupon" checked="{{checked}}" />
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="j_singlelist" style="margin-bottom: 100rpx" wx:if="{{d.yy1_id!=0 && d.yy1_id != 8}}">
+    <view class="j_singleft" style="text-align: right;">
+      <!--<image src='/images/icon8.png'></image>-->
+      <text style="color: #fd1438">合计金额：￥{{totalShow}}</text>
+    </view>
+  </view>
+  <!--合计金额-->
+  <view class='heji' style="align:left;display:block;text-align:left;padding-top:13px;" wx:if="{{d.yy1_id == 8}}">
+    <text style='font-size:14px;color:#999;text-align:left;align:left;' class='heji_small'>服务金额：￥{{lumpSum}}</text>
+    <text class='heji_small' style='color:#999;font-size:14px;text-align:left;'>优惠金额：￥{{fullReduction}}</text>
+    <text class='heji_red' style="text-align:left;align:left;">合计金额：￥{{totalShow}}</text>
+  </view>
+</scroll-view>
+<!--底部按钮-->
+<view class="singlefoot" bindtap="buy">
+  <button>下一步</button>
+</view>
+
+<view id="single_tipMask" hidden="{{tipMask}}">
+  <view class="single_MaskBox">
+    <text class="tipTitle">温馨提示</text>
+    <text class="tipContent">亲爱的用户，欢迎预定保洁服务。为保障保洁师的时间效益，如在服务开始前24小时内取消订单，将扣除您订单金额一定比例的数额，优惠券将失效。恳请您谅解！</text>
+    <text class="tipContent" style="margin-top:20px;">具体规则如下:</text>
+    <text class="tipContent">服务前24小时取消，退还100%订单实际支付金额；</text>
+    <text class="tipContent">服务前24-2小时取消，退还80%订单实际支付金额；</text>
+    <text class="tipContent">服务前2小时内取消，退还50%订单实际支付金额。</text>
+    <view class="nextTip">
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkboxs" wx:for-items="{{items}}">
+          <checkbox value="{{item.checked}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </checkbox-group>
+      <text class="iknow" bindtap='getKnow'>知道了</text>
+    </view>
+  </view>
+</view>
+<view id="suggestMask" hidden="{{suggestShow}}">
+  <view class="suggestBox" wx:if="{{nameShow=='日常保洁'}}">
+    <text class="suggestTitle">日常保洁建议时长对照表</text>
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">居住面积</view>
+        <view class="th">建议时长</view>
+        <view class="th">建议人员配置</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">≤60㎡</view>
+        <view class="th">3小时</view>
+        <view class="th">1人</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">61-90㎡</view>
+        <view class="th">4小时</view>
+        <view class="th">1人</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">91-130㎡</view>
+        <view class="th">6小时</view>
+        <view class="th">2人3小时</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">131-180㎡</view>
+        <view class="th">8小时</view>
+        <view class="th">2人4小时</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">181-270㎡</view>
+        <view class="th">12小时以上</view>
+        <view class="th">3人4小时</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">≧271㎡</view>
+        <view class="th">12小时以上</view>
+        <view class="th"></view>
+      </view>
+    </view>
+    <view class="interView">
+      <text>说明：</text>
+      <text> 为确保服务质量，请根据居室具体情况，合理下单所需服务时间。在家庭具体需求，基础卫生程度，装修布局影响下，建议时长会有所变化。</text>
+    </view>
+    <button bindtap="iKnow">我知道了</button>
+  </view>
+  <view class="suggestBox" wx:if="{{nameShow=='深度清洁'}}">
+    <text class="suggestTitle">深度清洁建议时长对照表</text>
+    <text style="font-size: 12px;margin-bottom: 15rpx;text-align: center">（人均工作3-4小时）</text>
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">居住面积</view>
+        <view class="th">建议时长</view>
+        <view class="th">建议人员配置
+        </view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">≤60㎡</view>
+        <view class="th">4小时</view>
+        <view class="th">1人</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">61-180㎡</view>
+        <view class="th">6-12小时</view>
+        <view class="th">2-3人</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">181-320㎡</view>
+        <view class="th">12-16小时</view>
+        <view class="th">3-4人</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">321-440㎡</view>
+        <view class="th">16-20小时</view>
+        <view class="th">4-5人</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">441-666㎡</view>
+        <view class="th">20-24小时</view>
+        <view class="th">5-6人</view>
+      </view>
+    </view>
+    <view class="interView">
+      <text>说明：</text>
+      <text> 此服务为全屋标准化清洁，建议时长依据房屋面积和工作量得出，以确保服务最大化到位。
+            如实际面积与所填写的面积不符合，清洁效果会有所影响。</text>
+    </view>
+    <button bindtap="iKnow">我知道了</button>
+  </view>
+  <view class="suggestBox" wx:if="{{nameShow=='夜间保洁'}}">
+    <text class="suggestTitle">夜间保洁建议时长对照表</text>
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">居住面积</view>
+        <view class="th">建议时长</view>
+        <view class="th">建议人员配置
+        </view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">≦70㎡</view>
+        <view class="th">3小时</view>
+        <view class="th">1人</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">71-140㎡</view>
+        <view class="th">6小时</view>
+        <view class="th">2人3小时</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">141-230㎡</view>
+        <view class="th">9小时</view>
+        <view class="th">3人3小时</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">231-300㎡</view>
+        <view class="th">12小时</view>
+        <view class="th">4人3小时</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">≧301㎡</view>
+        <view class="th">12小时以上</view>
+        <view class="th"></view>
+      </view>
+    </view>
+    <view class="interView">
+      <text>说明：</text>
+      <text>  为确保服务质量，请根据居室具体情况，合理下单所需服务时间。在家庭具体需求，基础卫生程度，装修布局影响下，建议时长会有所变化。</text>
+    </view>
+    <button bindtap="iKnow">我知道了</button>
+  </view>
+  <view class="suggestBox" wx:if="{{nameShow=='新房开荒'}}">
+    <text class="suggestTitle">新房开荒建议时长对照表</text>
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">建筑面积</view>
+        <view class="th">人员配置</view>
+        <view class="th">价格
+        </view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">30-100㎡</view>
+        <view class="th">1-3人</view>
+        <view class="th">11元/平方</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">101-200㎡</view>
+        <view class="th">3-5人</view>
+        <view class="th">11元/平方</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">201-350㎡</view>
+        <view class="th">5-8人</view>
+        <view class="th">11元/平方</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">351-500㎡</view>
+        <view class="th">8-12人</view>
+        <view class="th">11元/平方</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">501-680㎡</view>
+        <view class="th">12-15人</view>
+        <view class="th">11元/平方</view>
+      </view>
+      <view class="tr bg-w">
+        <view class="th">≧681㎡</view>
+        <view class="th">≧15人</view>
+        <view class="th">11元/平方</view>
+      </view>
+    </view>
+    <view class="interView">
+      <text>说明：</text>
+      <text>1.此服务按照整套建筑面积收费，不支持仅预约部分空间；</text>
+      <text>2.此服务只适合家庭新房</text>
+    </view>
+    <button bindtap="iKnow">我知道了</button>
+  </view>
+</view>

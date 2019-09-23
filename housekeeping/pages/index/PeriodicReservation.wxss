@@ -1,0 +1,295 @@
+/* pages/index/PeriodicReservation.wxss */
+.viewWEBKIT{
+  display: -webkit-box;
+  -webkit-box-pack:justify;
+  -webkit-box-align:center;
+}
+.viewL{
+  display: -webkit-box;
+}
+
+.j_singletop{
+  background-color:#f7eed0;
+  padding:30rpx;
+  border-bottom: 4px dashed #ead58c;
+  position: relative;
+  margin-bottom:25rpx;
+}
+.j_singleft image{
+  width:40rpx;
+  height: 40rpx;
+  display: block;
+  position: absolute;
+  top:50%;
+  -webkit-transform: translateY(-50%);
+}
+.j_singleft text{
+  font-size: 28rpx;
+  margin-right:10rpx;
+}
+
+.periodcenter{
+   background: #fff;
+   margin-bottom:25rpx;
+ }
+.j_periodcflex{
+  margin-bottom:25rpx;
+}
+.j_periodcflex .text1{
+  font-size: 28rpx;
+}
+.j_periodcflex .text2{
+  color:#fd2438;
+  font-size: 24rpx;
+  -webkit-box-align:center;
+}
+.j_periodcflex .text2 image{
+  width:30rpx;
+  height:30rpx;
+  display: block;
+  margin-left:10rpx;
+}
+.j_periodiclist>view{
+  -webkit-box-flex:1;
+  -webkit-box-align:center;
+  text-align: center;
+  border:1px solid #999;
+  border-radius:4px;
+  margin-right:20rpx;
+  padding:15rpx 0;
+}
+.j_periodiclist>view.hover{
+  border:1px solid #fd1438;
+}
+.j_periodiclist>view.hover text{
+  color:#fd1438;
+}
+.j_periodiclist>view .text1{
+  font-size: 30rpx;
+  color:#333;
+}
+.j_periodiclist>view text{
+  color:#666;
+}
+
+
+/*底部按钮*/
+.singlefoot{
+  position: fixed;
+  bottom:30rpx;
+  width:100%;
+}
+.singlefoot button{
+  margin:0 30rpx;
+  background: #fd1438;
+  color:#fff;
+}
+.viewtime1{
+  font-size:28rpx;
+}
+.viewtest{
+  border:1px solid #d2ccc3;
+  border-radius:12rpx;
+  height:50rpx;
+  line-height: 50rpx;
+}
+.viewtest view{
+  width:50rpx;
+  text-align: center;
+  font-size:36rpx;
+}
+.viewtest input{
+  width:100rpx;
+  text-align: center;
+}
+.viewtest .viewtime2{
+  border-right:1px solid #d2ccc3;
+}
+.viewtest .viewtime3{
+  border-left:1px solid #d2ccc3;
+}
+.triangle-facing-down{
+  border-left:2rpx solid;
+  border-bottom:2rpx solid;
+  width:12px;
+  height:20rpx;
+  transform:rotate(-45deg);
+
+}
+.citypickers{
+  position: fixed;
+  top:0;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  background:rgba(0,0,0,0.5);
+  z-index: 1111;
+
+}
+
+.citybody {
+  position: fixed;
+  bottom: 0px;
+  background: #fff;
+  z-index: 999;
+}
+
+.cityheader {
+  position: absolute;
+  top:0px;
+  width: 100%;
+  z-index: 4;
+}
+.cityheader text{
+  text-align:center;
+  font-size:16px;
+  line-height:30px;
+}
+
+.city-cancel {
+  float: left;
+  padding: 20rpx;
+  color: #818181;
+  font-size:34rpx;
+}
+
+.city-true {
+  float: right;
+  padding: 20rpx;
+  color: #fd1438;
+  font-size:34rpx;
+}
+
+.picker {
+  background-color: #fff;
+  border-bottom: 1px #d9d9d9 solid;
+  border-top: 1px #d9d9d9 solid;
+  padding: 20rpx;
+}
+.j_singletop{
+  background-color:#f7eed0;
+  padding:30rpx;
+  border-top: 4px dashed #ead58c;
+  border-bottom: 4px dashed #ead58c;
+  position: relative;
+  margin-bottom:20rpx;
+}
+.linkman{
+  display:-webkit-box;
+  position:absolute;
+  left:0;
+  top:0;
+  padding-left: 50rpx;
+}
+.address{
+  width:100%;
+  padding-right:50rpx;
+  padding-left: 50rpx;
+
+  display:-webkit-box;
+  -webkit-box-pack:justify;
+  position:absolute;
+  left:0;
+  top:18px;
+  box-sizing: border-box;
+}
+.defaultAddr{
+  border:1px solid red;
+  color:red;
+  width:30px;
+  height:16px;
+  line-height: 15px;
+  text-align:center;
+  font-size:12px;
+  padding:0;
+  margin:0;
+  margin-left:5px;
+  border-radius:4px;
+}
+.address text:first-child{
+  -webkit-box-flex:1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.address text:last-child{
+  min-width:30px;
+}
+
+#suggestMask{
+  width:100%;height:100%;
+  position:absolute;
+  top:0;left:0;background:rgba(0,0,0,0.5);
+  z-index:999;
+}
+.suggestBox{
+  width:90%;height:78%;
+  position:absolute;
+  top:6%;left:5%;background:#fff;
+  border-radius:4px;
+}
+.suggestTitle{
+  text-align:center;
+  line-height:80rpx;
+  font-size:24rpx;
+}
+.table {
+  border: 1px solid #efefef;
+  width: 80%;
+  margin:auto;
+}
+.tr {
+  display: flex;
+  border-bottom: 1px solid #efefef;
+  justify-content: center;
+  height: 30px;
+  align-items: center;
+}
+.tr:last-child{
+  border-bottom:0;
+}
+.td {
+    width:50%;
+    justify-content: center;
+    text-align: center;
+  display: flex;
+  height:30px;
+  color:#999;
+  align-items: center;
+  border-right:1px solid #efefef;
+}
+
+.th {
+  width: 50%;
+  justify-content: center;
+  display: flex;
+  height:30px;
+  color:#999;
+  align-items: center;
+  border-right:1px solid #efefef;
+}
+.th:nth-of-type(2n){
+  border-right:none;
+}
+.interView{
+  width:80%;
+  height:auto;
+  margin:20px auto;
+}
+.interView text{
+  color:#666;
+  font-size:22rpx;line-height:40rpx;
+}
+.suggestBox button{
+  width:100%;height:50px;
+  font-size:14px;
+  line-height:50px;
+  text-align:center;
+  color:#576b95;
+  border:none;
+  border-top:1px solid #576b95;
+  position:absolute;
+  bottom:0;
+  background:none;
+  border-radius:0;
+  
+}

@@ -1,0 +1,29 @@
+<view class="section bblg1">
+  <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon4.png'></image>
+  <input placeholder="天通苑西三区" value="{{position}}" bindinput='positionFn' disabled='true'/>
+</view>
+<view class="section bblg1">
+  <image></image>
+  <input placeholder="详细地址，如1号楼" value="{{detail_addr}}" bindinput='detailAddrFn' auto-focus/>
+</view>
+<view class="section bblg1">
+  <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon1.png'></image>
+  <input placeholder="请输入联系人" value="{{linkman}}" bindinput='linkmanFn' auto-focus/>
+</view>
+<view class="section bblg1">
+  <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon3.png'></image>
+  <input placeholder="手机号" value="{{contact_num}}" bindinput='contactNumFn' auto-focus/>
+</view>
+<view class="section bblg1">
+  <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon2.png'></image>
+  <input  style="border-bottom:1px solid #000;width:100rpx;overflow:hidden;-webkit-box-flex:inherit" value="{{square}}" bindinput='squareFn' auto-focus/>㎡(请填写实际的平米数，不小于30)
+</view>
+<view class="section bblg1">
+  <checkbox-group bindchange='isDefaultFn'>
+    <checkbox value="" checked="{{isDefault}}"/>设为默认地址
+  </checkbox-group>
+</view>
+
+<view class="singlefoot">
+<button bindtap='submitAddr'>保存</button>
+</view>

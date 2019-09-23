@@ -1,0 +1,77 @@
+/* pages/zht/xfjl/xfjl.wxss */
+.row{
+  display: flex;
+  flex-direction: row;
+}
+.red{
+  width:396rpx;
+  height:81rpx;
+  background:rgba(254,20,57,1);
+  font-size:16px;
+  font-family:FZLTHJW--GB1-0;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:35px;
+  text-align:center;
+}
+.white{
+  width:380rpx;
+  height:81rpx;
+  font-size:16px;
+  font-family:FZLTHJW--GB1-0;
+  font-weight:400;
+  color:rgba(74,74,74,1);
+  line-height:35px;
+  text-align:center;
+}
+.fgx{
+  width:750rpx;
+  height:5rpx;
+  background: #DADADA;
+}
+.fgx_one{
+  width:750rpx;
+  height:5rpx;
+  background: #DADADA;
+  margin-top:40rpx;
+}
+.title{
+  display: flex;
+  flex-direction: column;
+  margin-top:34rpx;
+  margin-left:26rpx;
+}
+.title_list{
+  font-size:14px;
+  font-family:FZLTHJW--GB1-0;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:3px;
+}
+.title_time{
+  font-size:10px;
+  font-family:FZLTHJW--GB1-0;
+  font-weight:400;
+  color:rgba(162,162,162,1);
+  line-height:35px;
+}
+.title_shuzi{
+  font-size:16px;
+  font-family:FZLTHJW--GB1-0;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:3px;
+  margin-left:611rpx;
+  margin-top:-52rpx;
+}
+.jiazai{
+  text-align: center;
+}
+.jiazai_font{
+  font-size:13px;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(162,162,162,1);
+  line-height:2px;
+  margin-top:36rpx;
+}

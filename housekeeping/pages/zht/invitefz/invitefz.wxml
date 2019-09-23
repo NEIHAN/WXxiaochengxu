@@ -1,0 +1,82 @@
+<!--pages/zht/invitefz/invitefz.wxml-->
+<view class='totality'>
+  <!--头图-->
+  <view class='toutu'>
+    <image src='https://www.zaihush.com/public/images/yqhy.png' class='toutu_img'></image>
+  </view>
+  <!--两个按钮-->
+  <view class='button'>
+    <navigator url='/pages/zht/military/military' hover-class='none'>
+      <button class='button_yilou'>邀请排行榜 </button>
+    </navigator>
+    <navigator url='/pages/zht/meinvite/meinvite' hover-class='none'>
+      <button class='button_erlou'>我的邀请</button>
+    </navigator>
+  </view>
+  <!--第一个大白框-->
+  <view class='white'>
+    <view class='white_one'>
+      <view class='white_one_xian'></view>
+      <text class='white_one_guize'>{{list1.invite_title}}</text>
+      <view class='white_one_xian_right'></view>
+      <text class='white_one_content'>
+{{list1.invite_rule}}
+</text>
+      <view class='white_one_xian'></view>
+      <text class='white_one_guize'>{{list2.invite_title1}}</text>
+      <view class='white_one_xian_right'></view>
+      <text class='white_one_content'>
+{{list2.invite_rule1}}
+</text>
+      <image src='{{list2.invite_pic}}' class='white_one_yqhx'></image>
+    </view>
+  </view>
+
+  <!--橘色按钮-->
+  <view class='orange'>
+    <navigator url='/pages/zht/erweima/erweima' hover-class='none'>
+      <button class='orange_button'>生成图片</button>
+    </navigator>
+    <text class='orange_text'>
+       生成图片生成图片生成图片生成图片生成图片生成图片
+           生成图片生成图片生成图片生成图片生成图片
+       </text>
+    <button class='orange_button' bindtap='suCopy'>复制邀请码</button>
+    <text class='orange_text'>
+       生成图片生成图片生成图片生成图片生成图片生成图片
+           生成图片生成图片生成图片生成图片生成图片
+       </text>
+  </view>
+
+  <!--悬浮-->
+  <view class='xuanfu' wx-if="{{suAppear}}">
+    <image src='https://www.zaihush.com/public/images/juxing.png' class='xuanfu_img'></image>
+    <image src='https://www.zaihush.com/public/images/juxing2.png' class='xuanfu_touxing'></image>
+    <view class='dian_one'>
+      <view class='xuanfu_one_dian'></view>
+      <view class='xuanfu_two_dian'></view>
+      <view class='xuanfu_three_dian'></view>
+    </view>
+    <view class='yzm'>
+      <view class='xuanfu_yaoqing'>您的邀请码</view>
+    </view>
+    <view class='dian'>
+      <view class='xuanfu_three_one_dian'></view>
+      <view class='xuanfu_two_dian'></view>
+      <view class='xuanfu_one_dian'></view>
+    </view>
+    <view class='shuzi'>{{code}}</view>
+    <view class='font'>
+      <text class='font_two'>复制邀请码发给好友</text>
+      <text class='font_one'>请好友在注册小程序会员时填入此邀请码</text>
+
+    </view>
+    <view class='conent'>
+      <button class='buttot_yifuzhi' bindtap='copyText'>复制</button>
+      <view class='font_three'>好友注册与下单你都可以获取积分</view>
+    </view>
+    <image src='https://www.zaihush.com/public/images/cha.png' class='img'></image>
+
+  </view>
+
+</view>

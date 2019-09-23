@@ -1,0 +1,2 @@
+<!--pages/my/linkToActivity.wxml-->
+<web-view src="{{linkUrl}}"></web-view>

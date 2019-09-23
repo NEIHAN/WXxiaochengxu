@@ -1,0 +1,41 @@
+<!--pages/my/blanceDetail.wxml-->
+<view class="blanceDetail-wrap">
+  <view class="blance-title">
+    <text class="rechange-detail" data-id="rechange" class="{{currentDetail==='rechange'?'active':''}}" bindtap='changeDetailFn'>充值记录</text>
+    <text class="consume-detail" data-id="consume" class="{{currentDetail==='consume'?'active':''}}" bindtap='changeDetailFn'>消费记录</text>
+    <text class="{{currentDetail === 'rechange'?'bot-line left':'bot-line right'}}"></text>
+  </view>
+  <view class="blanceDetail-content">
+    <view class="blance-list" wx:if="{{currentDetail==='rechange'}}" wx:for="{{rechangeList}}" wx:key="{{index}}">
+      <view class="list-title">
+        <!--<text>{{item.date}}</text>-->
+        <!-- <text>本月累计充值：1元 累计赠送0元</text> -->
+      </view>
+      <view class="list-content">
+        <view class="list-detail">
+          <text>{{item.title}}</text>
+          <text>+{{item.price}}元</text>
+        </view>
+        <view class="list-date">
+          <text>{{item.times}}</text>
+        </view>
+      </view>
+    </view><view class="blance-list" wx:if="{{currentDetail==='consume'}}" wx:for="{{consumeList}}" wx:key="{{index}}">
+      <view class="list-title">
+        <!--<text>{{item.date}}</text>-->
+        <!-- <text>本月累计充值：1元 累计赠送0元</text> -->
+      </view>
+      <view class="list-content">
+        <view class="list-detail">
+          <text>{{item.title}}</text>
+          <text wx:if="{{item.ident==1}}">-{{item.price}}元</text>
+          <text wx:if="{{item.ident==2}}">+{{item.price}}元</text>
+        </view>
+        <view class="list-date">
+          <text>{{item.times}}</text>
+        </view>
+      </view>
+    </view>
+    <text class="load-end">已加载全部</text>
+  </view>
+</view>

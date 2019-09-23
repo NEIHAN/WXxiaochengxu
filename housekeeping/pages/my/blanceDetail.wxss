@@ -1,0 +1,93 @@
+/* pages/my/blanceDetail.wxss */
+page{
+  width:100%;
+  height:100%;
+  background-color:#fff;
+}
+view,text{
+  box-sizing: border-box;
+}
+.blanceDetail-wrap{
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+  width:100%;
+  height:100%;
+}
+.blance-title{
+  width:100%;
+  display:-webkit-box;
+  background:#fff;
+  border-top:1px solid #ccc;
+  position:relative;
+}
+.blance-title text{
+  width:50%;
+  text-align:center;
+  padding: 10px 0;
+  color: #333;
+  font-size:30rpx;
+}
+.blance-title text.active{
+  color:#fd1438;
+}
+.blance-title .bot-line{
+  width:30%;
+  height:2px;
+  padding:0;
+  background:#fd1438;
+  position: absolute;
+  bottom:1px;
+  transition: all .3s;
+}
+.blance-title .left{
+  left:10%;
+}
+.blance-title .right{
+  left:60%;
+}
+
+.blanceDetail-content{
+  -webkit-box-flex:1;
+  margin-top:10px;
+  background:#fff;
+}
+.blance-list{
+  width:100%;
+  padding:10px;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  background:#fff;
+  margin-bottom:2px;
+  border-bottom:1px solid #ebebeb;
+}
+.blance-list text{
+  font-size:28rpx;
+  color:#999;
+}
+.blance-list .list-detail text{
+  font-size:28rpx;
+  color:#333;
+}
+.blance-list>view{
+  display:-webkit-box;
+  -webkit-box-pack:justify;
+}
+.blance-list>view.list-content{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  margin-top:10rpx;
+}
+.blance-list>view.list-content>view{
+  display:-webkit-box;
+  -webkit-box-pack:justify;
+}
+
+.load-end{
+  width:100%;
+  text-align:center;
+  margin-top:25px;
+  font-size:28rpx;
+  color:#999;
+  font-weight: 200;
+
+}

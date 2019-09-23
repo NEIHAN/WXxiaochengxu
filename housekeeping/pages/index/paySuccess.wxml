@@ -1,0 +1,8 @@
+<view  style="height: 100vh;overflow: hidden">
+    <image src="http://gcj-statics.oss-cn-beijing.aliyuncs.com/gct/logo/paysuccess.png" style="width:750rpx;height:1234rpx;"></image>
+
+    <view style="position: fixed;top:875rpx;display: flex;width: 100%;padding: 60rpx">
+        <button open-type="share" type="primary" style="box-shadow: 0 5px 5px rgba(0,0,0,0.3); background-color: #fd1438;color: #fff;width: 260rpx;border-radius: 100rpx">邀请好友</button>
+        <button bindtap="toOrder" style="box-shadow: 0 5px 5px rgba(0,0,0,0.3);background-color: #fd1438;color: #fff;width: 260rpx;border-radius: 100rpx">查看订单</button>
+    </view>
+</view>

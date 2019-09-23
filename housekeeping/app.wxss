@@ -1,0 +1,265 @@
+/**app.wxss**/
+page,view,text,input,textarea{
+
+  box-sizing: border-box;
+}
+view,text{
+  font-size:14px;
+  display: block;
+  color:#333;
+  font-weight: normal;
+    -moz-user-select:none;-webkit-user-select:none
+}
+.textcolor{
+  color:#fd1438;
+}
+.viewWEBKIT{
+  display: -webkit-box;
+  -webkit-box-pack:justify;
+  -webkit-box-align:center;
+}
+.viewL{
+  display: -webkit-box;
+}
+.ttlg1{
+  border-top:1px  solid #ebebeb;
+}
+.bblg1{
+  /*border-bottom:1px  solid #ebebeb;*/
+}
+.bgcolor{
+  background-color:#fd1438;
+}
+page{
+  background-color:#f4f4f4;
+  font-family: "微软雅黑";
+  -webkit-user-select: text !important;
+}
+
+/* #f7f5f5 */
+
+.c999{
+color:#999;
+}
+
+.container {
+  height: auto;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 200rpx 0; */
+  /* padding:10px 0; */
+  box-sizing: border-box;
+} 
+
+
+
+
+.px12{
+  font-size:12px;
+}
+.tcenter{
+  text-align:center;
+}
+.mt20{
+  margin-top:20rpx;
+}
+.mbtm20{
+  margin-bottom:20rpx;
+}
+.mr{margin-right:0}
+.plr10{
+  padding-left:15px;
+  padding-right:15px;
+}
+.pbt10{
+  padding-top:15px;
+  padding-bottom:15px;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+.ptlr15{
+  padding:20rpx 30rpx;
+}
+.row {
+  display: block;
+  margin: 0px;
+}
+
+.col {
+  display: flex;
+  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+  font-size: 17px;
+}
+
+.col>.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9,
+.col-10, .col-11, .col-12 {
+  overflow: hidden;
+}
+
+.col-1 {
+  width: 8.33333333333333%;
+}
+
+.col-2 {
+  width: 16.6666666666666%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.3333333333333%;
+}
+
+.col-5 {
+  width: 41.6666666666666%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.333333333333333%;
+}
+
+.col-8 {
+  width: 66.66666666666666%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33333333333333%;
+}
+
+.col-11 {
+  width: 91.66666666666666%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.x-center {
+  text-align: center;
+}
+
+
+.comment1-description{
+    margin-top: 35rpx;
+}
+.comment1-description1{
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #333333;
+    margin-left: 30rpx;
+}
+.star-pos {
+    position: absolute;
+    right: 0px;
+    margin-right: 40rpx;
+}
+.comment1-description .star-pos .hideStar{
+    z-index: 2;
+    background-image: url("http://m.dev.vd.cn/static/xcx/v1/goo/star(灰)@1.5x.png");
+    width: 83rpx;
+    height: 43rpx;
+    background-size: 43rpx 43rpx;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.starsM{
+    z-index: 1;
+    width: 83rpx;
+    height: 43rpx;
+    background-image: url("http://m.dev.vd.cn/static/xcx/v1/goo/star@1.5x.png");
+    background-size: 43rpx 43rpx;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+//jiantou
+.navigator-arrow {
+  padding-right: 26rpx;
+  position: relative;
+}
+.navigator-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  right: 30rpx;
+}
+
+button[type=default] {
+color:#666;
+background-color:#fff;
+
+}
+
+/*============底部按钮================*/
+.singlefoot{
+  position: fixed;
+  bottom:20rpx;
+  width:100%;
+  z-index:999;
+}
+.singlefoot button{
+  margin:0 30rpx;
+  background: #fd1438;
+  color:#fff;
+}
+.detailImg{
+    min-height: 120vh;
+    display: flex;
+    background-color: #ffffff;
+}
+.detailImg .notload{
+    width:40rpx;
+    height: 40rpx;
+    display: block;
+    margin: 200rpx auto;
+}
+.detailImg .load{
+    width:100%;
+}
+button[class="con_listbox"]::after {
+  border: 0;
+}
+.back_home{
+    position: fixed;
+    bottom:200rpx;
+    right:0;
+    background-color: rgba(0,0,0,0.6);
+    font-size: 28rpx;
+    color: #fff;
+    width: 90rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    padding-left:12rpx;
+
+    border-radius: 100%;
+}
+.detailImg .notload{
+    width: 60rpx;
+    height: 60rpx;
+
+}
+.detailImg .load{
+    width: 100%;
+    min-height: 120vh;
+
+}

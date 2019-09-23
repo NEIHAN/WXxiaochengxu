@@ -1,0 +1,156 @@
+<view class="container" wx:if="{{!hasLogin}}">
+  <button style="margin-top:45%;width:100%;" open-type="getUserInfo" bindgetuserinfo="bindUser">授权登录</button>
+</view>
+
+<!--pages/zht/integral1/integral1.wxml-->
+<view class='totality' wx:if="{{hasLogin}}">
+  <!--头图-->
+  <view class='toutu'>
+    <image class='toutu_img' src='https://www.zaihush.com/public/images/diwen.png'></image>
+  </view>
+  <!--提示-->
+  <navigator url='/pages/zht/jifenguize/jifenguize' hover-class='none'>
+    <view class='tishi'>
+      <image src='https://www.zaihush.com/public/images/yiwen.png' class='tishi_img'></image>
+      <text>规则说明</text>
+    </view>
+  </navigator>
+  <navigator url='/pages/zht/hdjl/hdjl'>
+    <view class='tishi_one'>
+      <text class='tishi_one_text'>积分明细</text>
+      <image src='https://www.zaihush.com/public/images/kaobei.png' class='tishi_kaobei'></image>
+    </view>
+  </navigator>
+  <!--白框-->
+  <view class='baikuang'>
+    <view class='white'>
+      <!--时间-->
+      <view class='time'>
+        <block wx:for="{{sign}}" wx:key="{{index}}">
+          <text class='time_shijian'>{{item.date}}</text>
+        </block>
+      </view>
+      <!--时间柱-->
+      <view class='timecolumn'>
+        <text class='timecolumn_column'></text>
+        <text class='timecolumn_column_one'></text>
+      </view>
+      <!--签到加分球-->
+      <view class='ball'>
+        <block wx:for="{{sign}}" wx:key="{{index}}">
+          <text class='sort' wx-if="{{item.stauts == 0}}">+{{item.score}}</text>
+          <view class='circle' wx-if="{{item.status == 1}}">
+            <image src='https://www.zaihush.com/public/images/duigou.png' class='circle_img'></image>
+          </view>
+        </block>
+      </view>
+
+      <!--已连续签到-->
+      <view class='sign'>
+        <text class='sign_shuzi'>{{user.score}}</text>
+        <view class='sign_row'>
+          <text class='sign_jifen'>可用积分</text>
+          <view class='sign_yellow'></view>
+          <text class='sign_jifen_one'>可抵扣</text>
+          <text class='sign_qian'>{{user.deduction_price}}</text>
+        </view>
+        <view class='sign_row'>
+          <text class='sign_time'>{{user.total_day}}</text>
+          <text class='sign_tian'>天</text>
+        </view>
+        <text class='sign_qiandao'>连续签到</text>
+      </view>
+      <!--button-->
+      <button class='{{isCheck?"button1":"button"}}' bindtap='check'>{{isCheck?"已领取":"签到领积分"}}</button>
+    </view>
+  </view>
+  <!--图片-->
+  <navigator url='/pages/zht/invitefz/invitefz' hover-class='none'>
+    <view class='picture'>
+      <image src='https://www.zaihush.com/public/images/yaoqing.png' class='picture_img'></image>
+    </view>
+  </navigator>
+  <!--分割线-->
+  <view class='fgx'></view>
+  <!--列表-->
+  <view class='list'>
+    <text class='list_title'>赚积分，抵现金</text>
+    <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/qiandao.png' class='list_white_img'></image>
+      <view class='list_row'>
+        <text class='list_white_qiandao'>每日签到</text>
+        <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+        <text class='list_white_shuzi'>20积分</text>
+      </view>
+      <text class='list_white_shuzi_one'>每日签到即可获得奖励</text>
+      <button class='list_white_button' style='{{isCheck?"background: #ccc;":""}}' bindtap='check'>{{isCheck?"已签到":"去完成"}}</button>
+    </view>
+
+    <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/fenxiang.png' class='list_white_img'></image>
+       <view class='list_row'>
+      <text class='list_white_qiandao'>分享群聊({{share.share_num}}/{{share.stay_share_num}})</text>
+      <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+      <text class='list_white_shuzi'>20积分</text>
+      </view>
+      <text class='list_white_shuzi_one'>每日最多可分享{{share.share_num + share.stay_share_num}}个群聊获得奖励</text>
+      <button class='list_white_button' bindtap='fxOk' style='{{share.status == 2?"background: #ccc;":""}}' open-type='{{share.status == 1 ? "share" : ""}}'>{{share.status == 1 ? "去分享" : "已完成"}}</button>
+    </view>
+
+    <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/gongzhonghao.png' class='list_white_img'></image>
+       <view class='list_row'>
+      <text class='list_white_qiandao'>关注公众号</text>
+      <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+      <text class='list_white_shuzi'>20积分</text>
+      </view>
+      <text class='list_white_shuzi_one'>关注在乎生活家政公众号获得奖励</text>
+      <button class='list_white_button' bindtap='gzgzh'>{{publicNum == 1 ? "去关注" : "已关注"}}</button>
+    </view>
+
+    <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/yaoqing2.png' class='list_white_img'></image>
+       <view class='list_row'>
+      <text class='list_white_qiandao'>邀请用户下单</text>
+      <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+      <text class='list_white_shuzi'>20积分</text>
+      </view>
+      <text class='list_white_shuzi_one'>被邀请的用户每次下单你都获得奖励</text>
+      <navigator url='/pages/zht/invitefz/invitefz' hover-class='none'>
+        <button class='list_white_button'>去邀请</button>
+      </navigator>
+    </view>
+
+    <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/xiandan.png' class='list_white_img'></image>
+       <view class='list_row'>
+      <text class='list_white_qiandao'>下单自动累计积分</text>
+      <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+      <text class='list_white_shuzi'>20积分</text>
+      </view>
+      <text class='list_white_shuzi_one'>预约服务，自动获得相应比例的积分</text>
+      <button class='list_white_button' bindtap='index'>去下单</button>
+    </view>
+
+    <view class='list_white'>
+      <image src='https://www.zaihush.com/public/images/pingjia.png' class='list_white_img'></image>
+       <view class='list_row'>
+      <text class='list_white_qiandao'>订单评价</text>
+      <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_white_jifen'></image>
+      <text class='list_white_shuzi'>20积分</text>
+      </view>
+      <text class='list_white_shuzi_one'>评价服务过多订单可获得奖励</text>
+      <button class='list_white_button' bindtap='evaluation'>去评价</button>
+    </view>
+  </view>
+
+</view>
+
+
+<!--礼物盒-->
+<view class='box' wx-if="{{checkIn}}">
+  <image src='https://www.zaihush.com/public/images/liwuhe.png' class='box_img'></image>
+  <text class='box_chenggong'>签到成功</text>
+  <text class='box_text'>坚持下去，连续7天签到积分有递增哦！</text>
+  <button class='box_button' bindtap='boxOk'>确认</button>
+</view>

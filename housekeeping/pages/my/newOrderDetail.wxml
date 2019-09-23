@@ -1,0 +1,220 @@
+<!--pages/my/newOrderDetail.wxml-->
+<view class="order-wrap">
+  <!-- 订单状态 -->
+  <view class="order-title">
+    <text class="order-status-text">订单状态</text>
+    <view class="order-content">
+      <view class="content-left">
+        <view class="circle-lg"><text class="circle-sm"></text></view>
+        <view class="line"></view>
+      </view>
+      <view class="content-right">
+        <text class="status">{{orderDetail.order_status}}</text>
+        <text class="time">{{orderDetail.createtime}}</text>
+        <!-- <text class="sanjiao"></text> -->
+      </view>
+    </view>
+  </view>
+  <!-- 订单信息 -->
+  <view class="order-info">
+    <text class="order-info-text">订单信息</text>
+    <view>
+      <text class="info-title">订单编号</text>
+      <text class="info-content">{{orderDetail.order_id}}</text>
+    </view>
+    <view>
+      <text class="info-title">联系人</text>
+      <text class="info-content">{{orderDetail.username}}</text>
+    </view>
+    <view>
+      <text class="info-title">联系电话</text>
+      <text class="info-content">{{orderDetail.mobile}}</text>
+    </view>
+    <view >
+      <text class="info-title">服务地点</text>
+      <text class="info-content">{{orderDetail.address}}</text>
+    </view>
+    <view >
+      <text class="info-title">技师姓名</text>
+      <text class="info-content">{{orderDetail.name}}</text>
+    </view>
+    <view >
+      <text class="info-title">技师工号</text>
+      <text class="info-content">{{orderDetail.job_number}}</text>
+    </view>
+
+    <view wx:for="{{orderDetail.rdCms}}">
+      <text class="info-title">服务套餐</text>
+      <text class="info-content">{{item}}</text>
+    </view>
+
+    <view wx:if="{{orderDetail.service}}">
+      <view class="info-title">服务类型</view>
+      <view class="info-content">
+        <view  style="margin-top: 0;padding-top: 0;display: flex;">
+
+          <view style="display: inline-block;width: auto">{{orderDetail.service_items}} </view>
+          <view style="border-bottom:  1px dashed #ccc;display: inline-block;flex: 1;position: relative;top: -16rpx;margin: 0 12rpx"></view>
+          <view style="display: inline-block;width: auto">{{orderDetail.service}}元</view>
+
+        </view>
+        </view>
+    </view>
+    <view wx:if="{{orderDetail.tool.length}}" style="flex-wrap: wrap">
+      <view class="info-title">附加服务</view>
+      <view class="info-content">
+        <view wx:for="{{orderDetail.tool}}" wx:key="{{index}}" style="margin-top: 0;padding-top: 0;display: flex;">
+
+          <view style="display: inline-block;width: auto">{{item.tool_name}} </view>
+          <view style="border-bottom:  1px dashed #ccc;display: inline-block;flex: 1;position: relative;top: -16rpx;margin: 0 12rpx"></view>
+          <view style="display: inline-block;width: auto">{{item.tool_price}}{{item.tool_unit}}</view>
+
+        </view>
+
+      </view>
+    </view>
+    <view>
+      <text class="info-title">服务时间</text>
+      <text class="info-content">{{orderDetail.service_date}} {{orderDetail.service_time}}</text>
+    </view>
+
+    <view wx:if="{{orderDetail.service_items != '除尘除螨' &&orderDetail.service_brand==''||orderDetail.service_brand==null}}">
+      <text class="info-title">服务人数</text>
+      <text class="info-content">{{orderDetail.service_num}}人</text>
+    </view>
+    <view wx:if="{{orderDetail.service_items != '除尘除螨' &&orderDetail.service_brand==''||orderDetail.service_brand==null}}">
+      <text class="info-title">保洁时长</text>
+
+      <text class="info-content" wx:if="{{orderDetail.service_duration!=''}}">{{orderDetail.service_duration}}小时</text>
+      <text class="info-content" wx:else>{{orderDetail.service_long}}小时</text>
+    </view>
+    <view wx:else>
+      <view wx:if="{{orderDetail.service_items != '除尘除螨'}}">
+        <text class="info-title">服务数量</text>
+        <text class="info-content">{{orderDetail.service_long}}台</text>
+      </view>
+    </view>
+
+    <view wx:if="{{orderDetail.square_num!=''&&orderDetail.service_brand!=null}}">
+      <text class="info-title">服务平方数</text>
+      <text class="info-content">{{orderDetail.square_num}}平方</text>
+    </view>
+
+    <view wx:if="{{orderDetail.cleaner_price!=''&&orderDetail.cleaner_price!=null}}">
+      <text class="info-title">使用毛巾</text>
+      <text class="info-content">{{orderDetail.cleaner_price}}元</text>
+    </view>
+    
+    <view wx:if="{{orderDetail.service_brand!=''&&orderDetail.service_brand!=0}}">
+      <text class="info-title">服务品牌</text>
+      <text class="info-content">{{orderDetail.service_brand}}</text>
+    </view>
+    <view wx:if="{{orderDetail.service_type!=''&&orderDetail.service_type!=0}}">
+      <text class="info-title">服务规格</text>
+      <text class="info-content">{{orderDetail.service_type}}</text>
+    </view>
+    <view wx:if="{{orderDetail.service_count!=''&&orderDetail.service_count!=0}}">
+      <text class="info-title">服务频次</text>
+      <text class="info-content">{{orderDetail.service_count}}</text>
+    </view>
+    <view wx:if="{{orderDetail.service_cycle!=''&&orderDetail.service_cycle!=0}}">
+      <text class="info-title">服务周期</text>
+      <text class="info-content">{{orderDetail.service_cycle}}周</text>
+    </view>
+  </view>
+  <!-- 点单明细 -->
+  <view class="order-detail">
+    <text class="order-detail-text">订单明细</text>
+    <view>
+      <text class="detail-title">服务价格</text>
+      <!--<text class="unit">{{orderDetail.service_long}}小时</text>-->
+      <text class="price">{{orderDetail.order_total}}元</text>
+    </view>
+    <view  wx:if="{{orderDetail.coupon_money!=''&&orderDetail.coupon_money!=null}}">
+      <text class="detail-title">优惠</text>
+      <!--<text class="unit">{{orderDetail.service_long}}小时</text>-->
+      <text class="price">- {{orderDetail.coupon_money}}元</text>
+    </view>
+    <!-- <view>
+      <text class="detail-title">清洁剂</text>
+      <text class="unit">5.0小时x3.0</text>
+      <text class="price">15.0元</text>
+    </view> -->
+    <!-- <view>
+      <text class="detail-title">调度费</text>
+      <text class="unit">3.0小时</text> 
+      <text class="price">5.0元</text>
+    </view> -->
+    <view>
+      <text class="detail-title">订单总价</text>
+      <!-- <text class="unit">3.0小时</text> -->
+      <text class="price">{{orderDetail.dis_amount}}元</text>
+    </view>
+    <view  wx:if="{{orderDetail.status==10}}">
+      <text class="detail-title">还需支付</text>
+      <!-- <text class="unit">3.0小时</text> -->
+      <text class="price">{{orderDetail.dis_amount}}元</text>
+    </view>
+    <view wx:for="{{orderDetail.first_service}}" wx:key="{{index}}"  wx:if="{{orderDetail.first_service!=''&&orderDetail.first_service!=0&&orderDetail.first_service!=null}}">
+      <text class="detail-title">第{{index+1}}次服务时间</text>
+      <!-- <text class="unit">3.0小时</text> -->
+      <text class="price">{{item}} {{orderDetail.service_time}}</text>
+    </view>
+  </view>
+  <view class="order-footer">
+    <!-- <text class="cancel-order">取消订单</text> -->
+    <!--<text wx:if="{{orderDetail.status==10}}" da class="to-pay">去支付</text>-->
+    <text  bindtap="pay" wx:if="{{orderDetail.status==10}}" class="to-pay">去支付</text>
+    <text wx:if="{{orderDetail.status==20}}" bindtap='tuikuan' data-id="{{orderDetail.id}}" data-orderId="{{orderDetail.order_id}}" class="apply-refund to-pay">申请退款</text>
+    <text wx:if="{{orderDetail.status==20}}" bindtap='wancheng' data-id="{{orderDetail.id}}" data-orderId="{{orderDetail.order_id}}" class="successful to-pay">完成</text>
+    <text wx:if="{{orderDetail.status==30}}" bindtap='qupingjia' data-id="{{orderDetail.id}}" data-orderId="{{orderDetail.order_id}}" class="to-evaluate to-pay">去评价</text>
+  </view>
+</view>
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+<view class="modal-dialog" wx:if="{{showModal}}">
+
+  <view bindtap="hideModal" style="text-align: right;padding: 20rpx 44rpx 0 0"><icon type="clear" size="24" /></view>
+
+  <view class="footerView">
+    <view style="color: #f00;font-size:16px;">实付金额：￥{{orderDetail.dis_amount}}</view>
+  </view>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}" wx:key="{{index}}" style="font-size: 16px">
+      {{item.value}}<radio value="{{item.name}}" checked="{{item.checked}}"/>
+    </label>
+  </radio-group>
+  <view class="confirmPay">
+    <form bindsubmit="confirmPay" report-submit="true">
+      <button form-type="submit">确认付款</button>
+    </form>
+  </view>
+
+</view>
+<view class="modal-mask"  catchtouchmove="preventTouchMove" wx:if="{{refundShow}}"></view>
+<view class="refundContainer" wx:if="{{refundShow}}">
+  <view style="padding: 30rpx 0;color: #999">请选择退款原因</view>
+  <view data-reason="{{item}}" bindtap="refundMoney" wx:for="{{reason}}" wx:key="{{index}}" class="reasonItem">{{item}}</view>
+  <view class="cancelReason" bindtap="cancelReason">取消</view>
+</view>
+<view wx:if="{{tuikuaning}}" style="width: 100%;">
+  <view catchtouchmove="preventTouchMove" style="position: fixed;top: 0;width: 100%;background-color: rgba(0,0,0,.7);height: 100vh;z-index: 22">
+
+  </view>
+  <view style="border-radius: 8px;  position: fixed;left: 50%;transform: translate(-50%,-50%);top: 50%;z-index: 9999999;width: 80%;background-color: #fff;">
+    <view style="padding:80rpx 0;font-size:16px;text-align:center;">您确定要申请退款吗？</view>
+    <view class="refundBtn">
+      <form bindsubmit="confirmPayRefund"  bindreset="cancelRefund" >
+        <input style="width: 0" name="input" placeholder="please input here" />
+        <view style="display: flex">
+          <button name="aaa" formType="reset" style="width: 50%">再想想</button>
+          <button  name="bbb" formType="submit" style="width: 50%;background-color: #fd1438;color: #fff">是的</button>
+        </view>
+
+      </form>
+    </view>
+  </view>
+</view>
+
+
+

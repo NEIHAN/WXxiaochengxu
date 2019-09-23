@@ -1,0 +1,4 @@
+<view style='width:60%;positioin:relative;left:20%;'>
+<button>分享给微信好友</button>
+<button>分享到朋友圈</button>
+</view>

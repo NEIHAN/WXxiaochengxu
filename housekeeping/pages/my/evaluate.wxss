@@ -1,0 +1,114 @@
+/* pages/my/evaluate.wxss */
+.manyidu{
+  width:100%;
+  box-sizing:border-box;
+  padding:10px;
+  display:-webkit-box;
+  -webkit-box-pack:justify;
+  -webkit-box-align:center;
+  background:#fff;
+  border-top:1px solid #ccc;
+}
+.manyidu view{
+  width:80px;
+  height:30px;
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+  border:1px solid #ccc;
+  border-radius:30px;
+  color:#ccc;
+  background:ccc;
+}
+.manyidu .curr{
+  color:#333;
+  background:#fdcf6a;
+}
+.manyidu view image{
+  width:20px;
+  height:20px;
+  display: block;
+  margin-right:5px;
+  border-radius:50%;
+  overflow:hidden;
+}
+
+
+.pingjia-wrap{
+  box-sizing: border-box;
+  width:100%;
+  background:#fff;
+  margin-top:10px;
+  padding:10px;
+}
+.title{
+  display: -webkit-box;
+  -webkit-box-align:center;
+}
+.title image{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  overflow:hidden;
+  margin-right:10px;
+}
+
+.star-wrap{
+  box-sizing: border-box;
+}
+.star-wrap view{
+  width:100%;
+  padding:10px 0;
+  border-top:1px solid #ccc;
+  display:-webkit-box;
+  -webkit-box-align:center;
+  -webkit-box-pack:center;
+}
+.star-wrap image{
+  width:25px;
+  height:25px;
+  margin-right:10px;
+}
+.pingjia-content{
+  width:100%;
+  position:relative;
+  border:1px solid #f3f3f3;
+  background:#fafafa;
+}
+.pingjia-content textarea{
+  width:100%;
+  box-sizing: border-box;
+  padding:10px;
+  height:100px;
+}
+.pingjia-content text{
+  position:absolute;
+  right:5px;
+  bottom:5px;
+  color:#ccc;
+}
+
+
+
+
+.pingjiafangshi{
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+}
+.pingjiafangshi text{
+  width:92px;
+  height:26px;
+  line-height: 26px;
+  text-align:center;
+  border:1px solid #ccc;
+  border-radius:4px;
+  margin-top:10px;
+   /* margin-left:4px;  */
+   margin-left:10px;
+}
+.subBtn{
+  width:50%;
+  border-radius:5px;
+  margin-top:10px;
+}

@@ -1,0 +1,103 @@
+<!--pages/zht/meinvite/meinvite.wxml-->
+<view class='totality'>
+  <!--标题大字-->
+  <view>
+    <image src='https://www.zaihush.com/public/images/bang.png' class='title_img'></image>
+  </view>
+  <view class='font'>
+    <view class='title_font'>已邀请了</view>
+    <view class='th'>{{invite_num}}</view>
+    <view class='title_font'>位好友</view>
+  </view>
+  <view class='yq' bindtap='yq'>
+    <navigator url='/pages/zht/erweima/erweima'>
+      <button class='yq_img'>邀请好友</button>
+    </navigator>
+  </view>
+  <view class='donghua' bindtap='yq'>
+    <image src='https://www.zaihush.com/public/images/jx.png' class='jx_img'></image>
+    <image src='https://www.zaihush.com/public/images/ren.png' class='ren_img'></image>
+  </view>
+
+  <view class='white_big'>
+    <view class='white_img'>
+      <view class='white'>
+        <view class='white_title_left'></view>
+        <text class='white_title_se'>已注册</text>
+        <view class='white_title_right'></view>
+      </view>
+      <block wx:for="{{registered}}" wx:key="{{index}}">
+        <view class='list'>
+          <image src='{{item.avatar}}' class='list_img'></image>
+          <view class='list_name'>{{item.wxname}}</view>
+          <view class='list_riqi'>{{item.reg_time}}</view>
+          <!-- <view class='list_time'>15:20</view> -->
+          <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_img_one'></image>
+          <view class='list_jia'>+{{item.score}}积分</view>
+        </view>
+        <view class='underline'></view>
+      </block>
+    </view>
+
+    <!-- <view class='white'>
+      <view class='white_img'>
+        <view class='white'>
+          <view class='white_title_left'></view>
+          <text class='white_title_se'>已注册</text>
+          <view class='white_title_right'></view>
+        </view>
+        <block wx:for="{{registered}}" wx:key="{{index}}">
+          <view class='list'>
+            <image src='{{item.avatar}}' class='list_img'></image>
+            <view class='list_name'>{{item.wxname}}</view>
+            <view class='list_riqi'>{{item.reg_time}}</view>
+            <!-- <view class='list_time'>15:20</view> 
+            <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_img_one'></image>
+            <view class='list_jia'>+{{item.score}}积分</view>
+          </view>
+          <view class='underline'></view>
+        </block>
+
+        <view class='white'>
+          <view class='white_title_left'></view>
+          <text class='white_title_se'>已下单</text>
+          <view class='white_title_right'></view>
+        </view>
+
+        <block wx:for="{{order}}" wx:key="{{index}}">
+          <view class='list'>
+            <image src='{{item.avatar}}' class='list_img'></image>
+            <view class='list_name'>{{item.username}}</view>
+            <view class='list_riqi'>{{item.createtime}}</view>
+            <!-- <view class='list_time'>15:20</view> 
+            <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_img_one'></image>
+            <view class='list_jia'>+{{item.order_score}}积分</view>
+          </view>
+          <view class='underline'></view>
+        </block>
+      </view>
+
+    </view> -->
+
+    <view class='white_img_one'>
+      <view class='white'>
+        <view class='white_title_left'></view>
+        <text class='white_title_se'>已下单</text>
+        <view class='white_title_right'></view>
+      </view>
+      <block wx:for="{{order}}" wx:key="{{index}}">
+        <view class='list'>
+          <image src='{{item.avatar}}' class='list_img'></image>
+          <view class='list_name'>{{item.username}}</view>
+          <view class='list_riqi'>{{item.createtime}}</view>
+          <!-- <view class='list_time'>15:20</view> -->
+          <image src='https://www.zaihush.com/public/images/jifen2.png' class='list_img_one'></image>
+          <view class='list_jia'>+{{item.order_score}}积分</view>
+        </view>
+        <view class='underline'></view>
+      </block>
+
+    </view>
+  </view>
+
+</view>

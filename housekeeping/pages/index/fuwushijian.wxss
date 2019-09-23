@@ -1,0 +1,146 @@
+/* pages/index/fuwushijian.wxss */
+image{
+  display: block;
+}
+page{
+  background-color: #fff;
+}
+.viewleft{
+  -webkit-box-align:center;
+}
+.viewleft image{
+  width:40rpx;
+  height: 40rpx;
+  margin-right:10rpx;
+}
+.viewleft text{
+  font-size:30rpx;
+}
+.viewtest{
+  border:1px solid #d2ccc3;
+  border-radius:12rpx;
+  height:50rpx;
+  line-height: 40rpx;
+}
+.viewtest view{
+  width:50rpx;
+  text-align: center;
+  font-size:36rpx;
+}
+.viewtest input{
+  width:100rpx;
+  text-align: center;
+}
+.viewtest .viewtime2{
+  border-right:1px solid #d2ccc3;
+}
+.viewtest .viewtime3{
+  border-left:1px solid #d2ccc3;
+}
+.viewtest span{
+  padding:0 5px;
+line-height:25px;
+font-size:14px;
+width:80rpx;
+display:-webkit-box;
+text-align:center;
+-webkit-box-pack:center;
+}
+
+
+.page-body {
+  width: 100%;
+  flex-grow: 1;
+  overflow-x: hidden;
+}
+.page-section-spacing{
+  box-sizing: border-box;
+}
+
+.page-section-spacing{
+  margin-top: 20rpx;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  text-align: center;
+  width: 220rpx;
+  height: 80rpx;
+  background: #fff;
+  border-bottom:2px solid #fff;
+}
+.scroll-view-item_H text{
+  font-size: 24rpx;
+  color: #666;
+  line-height: 35rpx;
+}
+/*选中的时间样式*/
+.hoverbg{
+  border-bottom:2px solid  #fd1438;
+
+}
+.hoverbg text{
+  color: #fd1438;
+}
+.maketimebottom{
+  margin-top: 40rpx;
+}
+.timemin{
+ display:-webkit-flex;
+display:flex;
+flex-wrap:wrap;
+align-items:flex-start;
+align-content:flex-start;
+justify-content:flex-start;
+border-left:1px solid #ebebeb;
+border-top:1px solid #ebebeb;
+}
+.timefloat{
+  width:24.7%;
+  height:130rpx;
+  background-color: #FFFFFF;
+  border-right: 1px solid #ebebeb;
+  border-bottom:1px solid #ebebeb;
+  text-align: center;
+  position: relative;
+}
+/*第一个选中打对勾  */
+.timefloat image{
+  position: absolute;
+  display: block;
+  width:50rpx;
+  height:50rpx;
+  top: 0;
+  right: 1rpx;
+}
+.xuanzhongbg{
+  background-color:#fd1438;
+}
+.xuanzhongbg text{
+  color:#fff;
+}
+/*置灰*/
+.zhihui{
+  background-color:#fff;
+}
+.zhihui text{
+  color:#d4d4d4;
+}
+.timefloat text{
+  font-size:28rpx;
+}
+.timefloat .text1{
+  line-height: 120rpx;
+}
+.timefloat .text2{
+  position: absolute;
+  width:100%;
+  text-align: center;
+  bottom:20rpx;
+}
+

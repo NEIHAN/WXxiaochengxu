@@ -1,0 +1,117 @@
+<scroll-view scroll-y>
+  <view class="body">
+    <view style="background:#fff;height:auto;width:100%;display:table;">
+      <view class="nav bc_white bgcolor">
+        <view class="{{selected?'red':'default'}} " bindtap="selected">介绍</view>
+        <view class="{{selected1?'red':'default'}} " bindtap="selected1">评价</view>
+        <view>
+          <button class="shareBtn" open-type="share" style="position: absolute;right: 36rpx;padding: 0;line-height: 0;background-color: #fff;border-radius:0;border:none !important;outline: none">
+            <image style="width: 40rpx;height: 40rpx;" src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/shareIconimg.png"></image>
+
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <!--介绍-->
+    <view class="{{selected?'show':'hidden'}}">
+      <view class="j_jieshao">
+        <image style="width:100%;height: 300rpx" src="{{d.pro.ad_pic}}"></image>
+        <view class="j_jieshaomony" style="display: flex;justify-content: space-between;flex-direction: column">
+          <view class="text1" style="display: flex;justify-content: space-between">
+            <view style="font-size: 16px">{{d.pro.name}}</view>
+            <!--<view style="display: flex">-->
+            <!--<button open-type="share" style="position: static;width:97rpx;font-size:12px;padding:0;background:#fff;margin:0;line-height:1.4;text-align:right;padding-right:10rpx;color: #fd1438">分享</button>-->
+
+
+            <!--</view>-->
+
+
+          </view>
+          <view class="j_jieshaoflex" style="display: flex;justify-content: space-between;">
+            <view class="view-l textcolor">{{d.pro.sale_price}}元/{{d.pro.unit}}
+              <text class="text2 ">{{d.pro.market_price}}元/{{d.pro.unit}}</text>
+              <text class="text3 textcolor">({{d.pro.pro_title}})</text>
+            </view>
+            <view bindtap="gotoGiveMoney" style="display: flex">
+              <view style="position: static;width:97rpx;font-size:12px;padding:0;background:#fff;margin:0;line-height:1.6;text-align:right;padding-right:10rpx;color: #fd1438">去充值
+
+              </view>
+              <image style="width: 32rpx;height: 32rpx;" src="http://gcj-statics.oss-cn-beijing.aliyuncs.com/gct/logo/giveMonery.jpg"></image>
+            </view>
+
+          </view>
+        </view>
+      </view>
+
+      <view class="detailImg">
+        <image src="http://gcj-statics.oss-cn-beijing.aliyuncs.com/gct/images/loading.gif" wx:if="{{!load}}" class="notload"></image>
+        <image class="load" lazy-load="{{lazy}}" src="{{picSrc}}" mode="widthFix" wx:if="{{ load }}"></image>
+      </view>
+
+    </view>
+
+    <!--评价-->
+    <view class="{{selected1?'show':'hidden'}}">
+      <view class="J_pingjiatop ptlr15">
+        <text class="text1">{{commentsDetail.catname}}</text>
+        <view class="viewWEBKIT bblg1" style="margin-bottom:20rpx;padding-bottom:20rpx;">
+          <text class="redcolor">评价（{{commentsDetail.num}}）</text>
+          <text>累计量：{{commentsDetail.order_num}}</text>
+        </view>
+      </view>
+      <view class="col plr10 pbt10 bblg1" style='background-color:#fff;' wx:for="{{commentsDetail.content}}" wx:key="{{index}}">
+        <view class="col-2" style='width:auto;margin-right:30rpx;'>
+          <image style='width:60rpx;height:60rpx;' src="{{item.avatar}}"></image>
+        </view>
+        <view class="col-10" style=''>
+          <text style='color:#999;font-size:24rpx;'>{{item.createtime}}</text>
+          <text style='color:#333;font-size:28rpx;line-heihgt:44rpx;'>{{item.evaluate_content}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+</scroll-view>
+<!--底部按钮-->
+<view class="j_jieshaofoot viewWEBKIT " hidden="{{selected1}}">
+  <view class="viewL vieweee">
+    <view>
+      <navigator style="color:#fff" wx:if="{{hasLogin&&yy1id==1}}" url='/pages/index/SingleReservation?catname={{d.pro.id}}&&yy1_id={{d.pro.yy1_id}}' class='bgcolor {{btnclass}}'>
+        单次预约
+      </navigator>
+      <navigator style="color:#fff" wx:if="{{hasLogin&&yy1id!=1 && d.pro.name != '石材护理' && d.pro.name != '窗帘清洗' && d.pro.name != '甲醛治理' && d.pro.name != '企业服务' && d.pro.name != '工程开荒' && d.pro.name != '瓷砖美缝'}}" url='/pages/index/SingleReservation?catname={{d.pro.id}}&&yy1_id={{d.pro.yy1_id}}' class='bgcolor {{btnclass}}'>
+        立即预约
+      </navigator>
+      <button style="color:#fff" open-type="getUserInfo" bindgetuserinfo="bindUser" wx:if="{{!hasLogin && d.pro.name != '石材护理' && d.pro.name != '窗帘清洗' && d.pro.name != '甲醛治理' && d.pro.name != '企业服务' && d.pro.name != '工程开荒' && d.pro.name != '瓷砖美缝'}}" url='/pages/index/SingleReservation?catname={{d.pro.id}}&&yy1_id={{d.pro.yy1_id}}' class='bgcolor {{btnclass}}'>
+        {{yuyueNmae}}
+      </button>
+    </view>
+    <!-- <navigator url='/pages/index/SingleReservation' class='bgcolor'>单次预约</navigator> -->
+    <!--<navigator url='/pages/index/PeriodicReservation'>周期预约</navigator>-->
+    <view wx:if="{{d.pro.yy2_id!==0}}">
+      <navigator style="color:#fff" wx:if="{{hasLogin}}" url='/pages/index/PeriodicReservation?catname={{d.pro.id}}&&yy2_id={{d.pro.yy2_id}}' class='bgcolor'>周期预约</navigator>
+      <button style="color:#fff" open-type="getUserInfo" bindgetuserinfo="bindUser" wx:if="{{!hasLogin}}" url='/pages/index/PeriodicReservation?catname={{d.pro.id}}&&yy2_id={{d.pro.yy2_id}}' class='bgcolor'>周期预约</button>
+    </view>
+  </view>
+  <view>
+    <button open-type="contact" wx:if="{{d.pro.name != '石材护理' && d.pro.name != '窗帘清洗' && d.pro.name != '甲醛治理' && d.pro.name != '企业服务' && d.pro.name != '工程开荒' && d.pro.name != '瓷砖美缝'}}" style="margin:0;width:160rpx;" class="customerService">客服</button>
+
+    <button open-type="contact" wx:if="{{d.pro.name == '石材护理' || d.pro.name == '窗帘清洗' || d.pro.name == '甲醛治理' || d.pro.name == '企业服务' || d.pro.name == '工程开荒' || d.pro.name == '瓷砖美缝'}}" style="margin:0;width:690rpx;margin-right:25px;color:#fff;" class='bgcolor {{btnclass}}'>联系客服</button>
+  </view>
+  <!--<contact-button-->
+  <!--type="default-light"-->
+  <!--size="20"-->
+  <!--session-from="weapp"-->
+  <!--&gt;-->
+  <!--客服-->
+  <!--</contact-button>-->
+</view>
+<view class="back_home" bindtap="goHome">
+  首页
+</view>
+<import src="../../img-loader/img-loader.wxml" />
+<template is="img-loader" data="{{ imgLoadList }}"></template>
+
+<!-- tab菜单效果：http://blog.csdn.net/liona_koukou/article/details/52860094 -->

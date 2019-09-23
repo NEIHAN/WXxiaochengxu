@@ -1,0 +1,14 @@
+
+<view class='plr10'>
+  <view class="col j_question">
+    <view class="col-1">Q:</view>
+    <view class="col-11">{{options.question}}</view>
+  </view>
+
+
+  <view class="col j_detail">
+    <view class="col-1">A:</view>
+    <view class="col-11">{{options.answer}}</view>
+  </view>
+
+</view>

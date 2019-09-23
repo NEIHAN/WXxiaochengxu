@@ -1,0 +1,46 @@
+/* pages/my/PeriodicOrder.wxss */
+.j_perilist{
+  background-color:#fff;
+}
+.j_pernav{
+  margin-bottom:20rpx;
+}
+.j_pernav .view1{
+  font-size: 32rpx;
+  -webkit-box-align:center;
+}
+.j_pernav .view1 text{
+  color:#fff;
+  font-size: 20rpx;
+  padding:5rpx 10rpx;
+  margin-left:10rpx;
+  background:rgba(255,0,0,0.5);
+}
+.j_pernav .view2{
+  position: relative;
+}
+.j_pernav .view2 text{
+  padding-right:20rpx;
+}
+.j_pertext text{
+  font-size: 28rpx;
+  color:#666;
+  line-height: 45rpx;
+  margin-right: 10rpx;
+}
+.u_peribtn{
+  -webkit-box-align:center;
+  padding:15rpx 0;
+  margin-top: 20rpx;
+}
+.u_peribtn text{
+  font-size:28rpx;
+  color:#666;
+  margin-right: 10rpx;
+}
+.u_peribtn text button{
+  background-color:#fff;
+}
+.navigator-arrow:after{
+  right: 0rpx;
+}

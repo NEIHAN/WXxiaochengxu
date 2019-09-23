@@ -1,0 +1,214 @@
+/* pages/index/reposition.wxss */
+#reposition{
+  width:100%;height:100%;
+}
+.positionHeader{
+  width:100%;height:40px;background:#fff;border-bottom:1px solid #efefef;
+}
+.localtionIcon{
+  width:100%;height:40px;float:left;
+}
+.localtionIcon image{
+  display:iline-block;
+  width:16px;height:16px;
+  margin:12px 5px;
+  float:left;
+}
+.localtionIcon text{
+  float:left;
+  font-size:14px;line-height:40px;
+  /* width:70%;
+   text-overflow: ellipsis;
+  overflow:hidden;
+  white-space: nowrap;  */
+}
+.positionSoso{
+  float:right;
+  width:70%;
+  height:40px;
+}.soso{
+  width:90%;height:30px;margin:5px auto;background:#efefef;
+  border-radius:4px;
+}
+.soso image{
+  display:inline-block;
+  width:14px;height:14px;
+  margin:8px 5px;
+  float:left;
+}
+.soso input{
+  float:left;
+  width:85%;height:30px;
+}
+
+.positionContainer{
+  width:100%;height:auto;
+  display:table;background:#fff;
+    padding-bottom:120rpx;
+
+}
+.positionTop{
+  height:60px;border-bottom: 1px solid #efefef;
+}
+.positionTop text{
+  width:60%;height:30px;
+  line-height:30px;
+  padding:0 5%;
+  font-size:14px;
+   text-overflow: ellipsis;
+  overflow:hidden;
+  white-space: nowrap;
+  float:left;
+}
+.positionTop span{
+  color:#707070;
+  height:30px;display:block;
+  line-height:30px;font-size:14px;
+}
+.positionTop .cx{
+  float:right;width:30%;
+  height:30px;display:inline-block;
+  line-height:30px;font-size:14px;
+}
+.positionTop span image{
+  display:inline-block;width:18px;height:16px;
+  float:left;margin:7px 10px;
+}
+.myPosition{
+  width:100%;height:auto;display:table;
+  background:#fff;
+}
+.citypickers{
+ 	  position: fixed;
+ 	  height: 100%;
+ 	  width: 100%;
+ 	  min-height: 100%;
+ 	  background-color: red;
+    
+ 	}
+ 	
+ 	.citybody {
+ 	  position: fixed;
+ 	  bottom: 0px;
+     background: #fff;
+ 	}
+ 	
+ 	.cityheader {
+ 	  position: absolute;
+ 	  top:0px;
+ 	  width: 100%;
+ 	  z-index: 4;
+ 	}
+   .cityheader text{
+     text-align:center;
+     font-size:16px;
+     line-height:30px;
+   }
+ 	
+ 	.city-cancel {
+ 	  float: left;
+ 	  margin: 20rpx;
+ 	  color: #818181;
+ 	}
+ 	
+ 	.city-true {
+ 	  float: right;
+ 	  margin: 20rpx;
+ 	  color: #2FB42E
+ 	}
+ 	
+ 	.picker {
+ 	  background-color: #fff;
+ 	  border-bottom: 1px #d9d9d9 solid;
+ 	  border-top: 1px #d9d9d9 solid;
+ 	  padding: 20rpx;
+ 	}
+.listTitle{
+  width:100%;height:40px;
+}
+.listTitle text{
+  height:40px;
+  line-height:40px;float:left;
+  color:#707070;font-size:14px;
+}
+.listTitle image{
+  display:inline-block;
+  width:20px;height:20px;
+  margin:10px 10px;
+  float:left;
+}
+.positionList{
+  width:100%;height:auto;display:table;
+}
+.list{
+  width:90%;
+  padding:0 5%;border-bottom:1px solid #efefef;
+}
+.list text{
+  font-size:14px;line-height:25px;margin-top:5px;
+}
+.list span{
+  font-size:12px;color:#707070;
+ line-height:25px;
+}
+.addLocation{
+  width:100%;height:50px;
+  background:#fff;position:fixed;bottom:0;
+
+}
+.addLocation view{
+  width:42%;height:100%;margin:auto;
+}
+.addLocation text{
+  color:#fd1438;
+  font-size:16px;
+  text-align:center;
+  line-height:50px;float:left;
+}
+.addLocation image{
+  display:inline-block;
+  width:20px;
+  height:20px;
+  margin:15px ;float:left;
+}
+
+.cityList{
+  width:100%;height:auto;
+  display:table;
+  background:#fff;
+}
+.title{
+  width:100%;padding:0 10px;
+  height:40px;
+  background:#fff;
+  font-size:14px;
+  line-height:40px;
+  border-bottom:1px solid #efefef;
+}
+.title text{
+  float:left;
+}
+.title span{
+    float:left;
+    color:#fd1438;
+    font-size:14px;margin-left:5px;
+  
+}
+.listCity{
+  width:100%;height:auto;display:table;
+  background:#fff;
+}
+.citylistTitle{
+  padding:0 10px;
+  height:20px;background:#ccc;
+  line-height:20px;
+  color:#707070;
+}
+.citys text{
+  width:100%;
+  height:30px;
+  line-height:30px;
+  padding:0 10px;
+  border-bottom:1px solid #efefef;
+  font-size:14px;
+}

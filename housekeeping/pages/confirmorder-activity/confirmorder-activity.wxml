@@ -1,0 +1,81 @@
+<scroll-view scroll-y>
+    <view style="padding-bottom: 60px">
+        <navigator url="/pages/my/address" class="j_singletop">
+            <view class="j_singleft" style="height:32px;">
+                <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/icon4.png'></image>
+                <view wx:if="{{address.linkman==''||address.linkman==null}}" style="color: #999;text-align: center;padding-top:5px;">
+                    请添加您的服务地址~
+                </view>
+                <block wx:else>
+                    <view class="linkman">
+                        <text>{{address.linkman}}</text>
+                        <text>{{address.contact_num}}</text>
+                        <view class="defaultAddr" wx:if="{{address.is_default==1}}">默认</view>
+                    </view>
+                    <view class="address">
+                        <text class="loca_addr"style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;">{{address.loca_addr}}{{address.detail_addr}}</text>
+                        <text>{{address.square_num}}㎡</text>
+                    </view>
+                </block>
+
+            </view>
+            <view class="navigator-arrow" style="top:-29rpx;"></view>
+        </navigator>
+        <view class="two-row-layout two-row-layout1">
+            <view>  </view>
+            <view class="right-layout" bindtap="timerShow" style="font-size:30rpx">
+                温馨提示
+                <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/block.png'></image>
+            </view>
+
+        </view>
+        <view class="orderItemContainer">
+            <view data-name="{{item}}" bindtap="selectBrand"  class="orderItem {{active_orderItem==item.pro_price?'active_orderItem':''}}" wx:for="{{orderArr}}" wx:key="{{index}}">
+                <view>{{item.pro_title}}</view>
+                <view style="font-size: 24rpx">（{{item.pro_describe}}）</view>
+                <view>￥{{item.pro_price}}</view>
+                <view class="selectFooter" wx:if="{{active_orderItem==item.pro_price}}"></view>
+            </view>
+        </view>
+
+        <view class="two-row-layout"  wx:for="{{tool}}" wx:key="{{index}}">
+            <view class="left-layout normalColor"  >{{item.tool_name}} </view>
+            <view class="right-layout" style="display: flex">
+                <view style="margin-right: 20rpx;padding-top: 4rpx"> ￥{{item.tool_price}}</view>
+
+                <checkbox-group data-id="{{item.id}}" data-price="{{item.tool_price}}"  data-name="{{item.tool_name}}" bindchange="checkboxChange">
+                    <label class="checkboxs" >
+                        <checkbox value="{{item.tool_price}}" />
+                    </label>
+                </checkbox-group>
+            </view>
+
+        </view>
+        <view class="total-money">
+            合计金额：￥{{totalPrice}}
+        </view>
+
+    </view>
+</scroll-view>
+<view class="singlefoot" bindtap="buy" style="z-index: 111">
+    <button >下一步</button>
+</view>
+<view id="suggestMask" hidden="{{suggestShow}}">
+    <view class="suggestBox" >
+        <text class="suggestTitle">温馨提示</text>
+
+        <view class="interView">
+            <text>变更服务时间：</text>
+            <text> 1、距离服务时间12小时之前，联系客服更改，无需手续费。</text>
+            <text> 2、距离服务时间12小时之内临时更改，则需要收取30元／人临时退改费。</text>
+            <text> 3、服务开始1小时后不可取消。</text>
+        </view>
+        <view class="interView">
+            <text>关于退款：</text>
+            <text> 套餐在生效后可以中途申请退款，但需要扣除已经服务过的服务费用以及剩余未服务费用中的10%作为违约手续费。</text>
+
+        </view>
+        <button bindtap="iKnow">我知道了</button>
+    </view>
+
+</view>

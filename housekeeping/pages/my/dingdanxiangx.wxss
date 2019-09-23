@@ -1,0 +1,66 @@
+/* pages/my/dingdanxiangx.wxss */
+.j_xiangq_top{
+  border-bottom: 8rpx dashed #fd1438;
+}
+.j_xiangq_top,.j_xiangq_center,.j_xiangq_bottom{
+  background-color:#fff;
+  margin-bottom:30rpx;
+}
+.j_viewbox{
+  display: -webkit-box;
+  -webkit-box-align:center;
+  -webkit-box-pack:justify;
+  font-size:28rpx;
+  color:#333;
+}
+.j_viewbox view{
+  display: -webkit-box;
+  -webkit-box-align:center;
+  font-size:34rpx;
+  color:#333;
+}
+.j_viewbox view text{
+  color:#666;
+  padding-left:15rpx;
+}
+.j_xiangq_center .tittle{
+  color:#333;
+  font-size: 34rpx;
+}
+.j_xiangqmain{
+  display: -webkit-box;
+  -webkit-box-align:center;
+
+}
+.j_xiangqmain image{
+  display: block;
+  width:110rpx;
+  height:110rpx;
+  margin-right:30rpx;
+}
+.j_xqmainr{
+  -webkit-box-flex:1;
+}
+.j_xqmainr .view1{
+  font-size: 28rpx;
+  color: #333;
+}
+.j_xqmainr .view2{
+  margin-top:22rpx;
+  display: -webkit-box;
+  -webkit-box-pack:justify;
+  -webkit-box-flex:1;
+}
+.j_xqmainr .view2 text{
+  color:#666;
+}
+.j_xiangq_bottom{
+  padding:20rpx 30rpx;
+}
+.j_xiangq_bottom view{
+  display: -webkit-box;
+  -webkit-box-align:center;
+  -webkit-box-pack:justify;
+  font-size: 32rpx;
+  color: #333;
+}

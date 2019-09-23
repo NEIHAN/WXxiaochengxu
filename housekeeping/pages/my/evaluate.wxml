@@ -1,0 +1,57 @@
+<!--pages/my/evaluate.wxml-->
+<view>
+  <view style="background:#fff;padding-bottom:10px">
+    <view class="manyidu" bindtap='checkManyidu'>
+      <view class="{{isChecked==='manyi'?'curr':''}}" data-id="manyi">
+        <image data-id="manyi" src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/manyi.jpg"></image>
+        <text data-id="manyi">好评</text>
+      </view>
+       <view class="{{isChecked==='yiban'?'curr':''}}" data-id="yiban">
+        <image data-id="yiban" src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/yiban.jpg"></image>
+        <text data-id="yiban">中评</text>
+      </view>
+      <view class="{{isChecked==='bumanyi'?'curr':''}}" data-id="bumanyi">
+        <image data-id="bumanyi" src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/bumanyi.jpg"></image>
+        <text data-id="bumanyi">差评</text>
+      </view>
+     
+      
+    </view>
+    <view class="pingjiafangshi" bindtap='checkPinjiaNeirong'>
+      <text data-text="效率很高">效率很高</text>
+      <text data-text="很干净">很干净</text>
+      <text data-text="很专业">很专业</text>
+      <text data-text="很礼貌">很礼貌</text>
+    </view>
+  </view>
+
+    
+
+  <view class="pingjia-wrap">
+    <view class="title" style="display: flex;padding-bottom: 10rpx">
+      <image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/foot4.jpg"></image>
+      <view style="display: flex;flex-direction: column">
+        <text>技师姓名：{{orderDetail.name}}</text>
+        <text>技师工号：{{orderDetail.job_number}}</text>
+      </view>
+
+    </view>
+   <!-- <view class="star-wrap">
+      <view bindtap='checkStar'>
+        <image wx:key="{{index}}" wx:for="{{starHtml}}" data-val='{{index+1}}' src="{{item}}"></image>
+      </view>
+    </view>-->
+    <view class="pingjia-content">
+      <textarea value="{{pingjiaContent}}" bindinput='pingjiaCotentFn' placeholder='亲，对服务还满意吗？'></textarea>
+      <text class="tip">至少输入8个字</text>
+    </view>
+    <form bindsubmit="submitPingjia" report-submit="true">
+      <button class="subBtn" form-type="submit">提交评价</button>
+    </form>
+  </view>
+
+
+
+
+
+</view>

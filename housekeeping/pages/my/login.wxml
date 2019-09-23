@@ -1,0 +1,27 @@
+<!--pages/my/login.wxml-->
+<view id="login">
+    <view class="iphone">
+      <text>手机号</text>
+      <input value="{{iphoneVal}}" placeholder='请输入您的手机号' bindinput="iphoneValue"></input>
+    </view>
+     <view class="code" style="border-bottom:1px solid #efefef">
+      <text>验证码</text>
+      <input value="{{inputCode}}" placeholder='请输入验证码' bindinput='inputCodeFn'></input>
+      <button disabled='{{disabled}}' data-id="2"  class="getCode" bindtap="getVerificationCode">{{time}}</button>
+    </view>
+    <view style="display: flex;padding: 20rpx;">
+        <checkbox-group bindchange="serviceValChange">
+            <label class="checkbox">
+                <checkbox value="coupon" checked="{{checked}}" />
+            </label>
+        </checkbox-group>
+        <view style="color: #999;font-size: 12px">我已经阅读并同意<text bindtap="gotextLong" style="color: #fd1438;display: inline-block;font-size: 12px">《用户协议》</text></view>
+    </view>
+
+    <button disabled="{{!checked}}" class="loginBtn" bindtap="loginFn">绑定</button>
+
+    <!-- <view class="wxLogin">
+        <image class="wxicon" src='../../images/weixin.png'></image>
+        <text>使用微信账号登录</text>
+    </view> -->
+</view>

@@ -1,0 +1,100 @@
+<!--index.wxml-->
+<view class="container" wx:if="{{noLogin}}">
+    <button style="margin-top:45%;width:100%;" open-type="getUserInfo" bindgetuserinfo="bindUser">授权登录</button>
+</view>
+<view class="container" wx:if="{{hasLogin}}">
+  <view class="j_personalcenter bgcolor" style="position:relative;">
+      <image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/myBg.jpg" style="width:100%;height:100%;"></image>
+      <view class="myTopic" style="position:absolute;top:30px;left:25%;width:50%;">
+        <image src="{{avatar}}" class="topic"></image>
+        <text class="number">{{mobile}}</text>
+      </view>
+
+  </view>
+<view class="j_personfix">
+        <!--<navigator url="/pages/my/Detailed">-->
+        <navigator url="/pages/my/userBlance" hover-class="none">
+        <!-- <image src="/images/yue.png"></image> -->
+         
+           <text class="text2 textcolor">{{myBlance}}</text>
+            <text class="text1">我的余额</text>
+          <!--<view class="textcolor dd">充值</view>-->
+        </navigator>
+
+        <navigator url="/pages/my/Coupon" hover-class="none">
+        <!-- <image src="/images/youhuiquan.png"></image> -->
+          
+           <text class="text2 textcolor">{{couponNum}}</text>
+           <text class="text1">优惠券</text>
+          <!--<view class="textcolor dd">购买</view>-->
+        </navigator>
+      </view>
+  <!--<navigator url="/pages/my/myorder" class="navigator">-->
+    <!--<view class="j_myleft">-->
+      <!--<image src='/images/test.png'></image>我的订单-->
+    <!--</view>-->
+    <!--<view class="navigator-arrow"></view>-->
+  <!--</navigator>-->
+  <!--<navigator url="/pages/my/Coupon" class="navigator">-->
+    <!--<view class="j_myleft">-->
+      <!--<image src='/images/test.png'></image>优惠券-->
+    <!--</view>-->
+    <!--<view class="navigator-arrow"></view>-->
+  <!--</navigator>-->
+  <!--<navigator url="/pages/my/share" class="navigator">-->
+    <!--<view class="j_myleft">-->
+      <!--<image src='/images/test.png'></image>邀请-->
+    <!--</view>-->
+    <!--<view class="navigator-arrow"></view>-->
+  <!--</navigator>-->
+  <navigator url="/pages/my/address?url=my" class="navigator">
+    <view class="j_myleft">
+      <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/address1.jpg'></image>地址
+    </view>
+    <view class="navigator-arrow"></view>
+  </navigator>
+  <navigator url="/pages/my/helpList" class="navigator">
+    <view class="j_myleft">
+      <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/help1.jpg'></image>帮助
+    </view>
+    <view class="navigator-arrow"></view>
+  </navigator>
+  <!-- <navigator url="/pages/my/fovwer" class="navigator">
+    <view class="j_myleft">
+      <image src='/images/icon11.png'></image>收藏
+    </view>
+    <view class="navigator-arrow"></view>
+  </navigator> -->
+  <navigator url="/pages/my/userPro" class="navigator">
+    <view class="j_myleft">
+      <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/userService.jpg'></image>用户协议
+    </view>
+    <view class="navigator-arrow"></view>
+  </navigator>
+  <navigator class="navigator" url="/pages/my/contactUs">
+    <view class="j_myleft">
+      <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/concatus1.jpg'></image>联系我们
+    </view>
+    <view class="navigator-arrow"></view>
+  </navigator>
+  <!-- <navigator url="/pages/my/fovwer" class="navigator">
+    <view class="j_myleft">
+      <image src='/images/icon14.png'></image>联系我们
+    </view>
+    <view class="navigator-arrow"></view>
+  </navigator> -->
+   <navigator bindtap="logout" class="navigator">
+    <view class="j_myleft">
+      <image src='http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/quit1.jpg'></image>退出登录
+    </view>
+    <view class="navigator-arrow"></view>
+  </navigator>
+
+</view>
+
+
+
+
+
+
+

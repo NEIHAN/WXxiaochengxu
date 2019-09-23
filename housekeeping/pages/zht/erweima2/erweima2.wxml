@@ -1,0 +1,16 @@
+<!--pages/zht/erweima2/erweima2.wxml-->
+<!--pages/zht/erweima/erweima.wxml-->
+<view class='totality'>
+  <!--图片-->
+  <view class='picture'>
+    <!-- <text class='picture_font'>邀你一起体验精致保洁</text> -->
+    <text class='picture_anniu'>长按识别二维码注册会员后领取红包</text>
+    <text class='picture_hongbao'>188元红包</text>
+    <image src='https://www.zaihush.com/public/images/1.png' class='picture_touxiang'></image>
+    <text class='picture_name'>房东的猫</text>
+    <image src='https://www.zaihush.com/public/images/as.png' class='picture_erweima'></image>
+    <!-- <!-- <image src='{{shareImgSrc}}' style="width:100%;height:1400rpx;"></image> -->
+  </view>
+  <!--button-->
+  <button class='button' bindtap='savePicture'>保存图片</button>
+</view>

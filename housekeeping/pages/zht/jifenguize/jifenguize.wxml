@@ -1,0 +1,53 @@
+<!--pages/zht/jifenguize/jifenguize.wxml-->
+<view class='totality'>
+<!--头图-->
+ <view class='toutu'>
+  <image src='https://www.zaihush.com/public/images/guize.png' class='toutu_img'></image>
+ </view>
+<!--白图-->
+ <view class='toutu'>
+   <view class='toutu_images_img'>
+    <view class='xian'>
+      <view class='baidu_right'></view>
+      <view class='baidu_left'></view>
+    </view>
+    <view class='title'>
+      <view class='baidu_text'>{{list1.title1}}</view>
+      <view class='baidu_content'>{{list1.text1}}</view>   
+      <image src='{{list1.pic1}}' class='baijing'></image>
+   </view>
+  </view> 
+ </view>
+
+
+<view class='toutu_images'>
+    <view class='xian'>
+      <view class='baidu_right'></view>
+      <view class='baidu_left'></view>
+    </view>
+    <view class='title'>
+      <view class='baidu_text'>{{list2.title2}}</view>
+      <view class='baidu_content'>{{list2.text2}}</view>
+      <image src='{{list2.pic2}}' class='baijing'></image>
+     </view>
+   </view>
+
+   <view class='toutu_images'>
+    <view class='xian'>
+      <view class='baidu_right'></view>
+      <view class='baidu_left'></view>
+    </view>
+    <view class='title'>
+      <view class='baidu_text'>{{list3.title3}}</view>
+      <view class='baidu_content'>{{list3.text3}}</view>
+      <image src='{{list3.pic3}}' class='baijing'></image>  
+   </view>
+   
+  </view>
+
+<view class='wxts'>
+温馨提示：如违规刷积分，平台有权取消用户积分获取资格哦！
+</view>
+
+
+</view>

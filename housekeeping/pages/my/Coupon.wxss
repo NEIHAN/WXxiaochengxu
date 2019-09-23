@@ -1,0 +1,149 @@
+/* pages/my/Coupon.wxss */
+/*航，暂定 开始  */
+.change-cuurent{
+  color:#ffffff;
+  background-color: #fd1438;
+}
+.change-wrap{
+  display:flex;
+  background-color: #fff;
+  border-bottom:1px solid #ebebeb;
+  margin-bottom: 10rpx;
+}
+.change-wrap text{
+  flex:1;
+  text-align:center;
+  font-size: 32rpx;
+  height:74rpx;
+  line-height:73rpx;
+
+}
+/*兑换模态框  */
+.model-mask{
+  position:fixed;
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+}
+.model-bj{
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:1;
+  background:rgba(0,0,0,.5);
+  width:100%;
+  height:100%;
+}
+.model-content{
+  width:75%;
+  height:25%;
+  padding:10px;
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  margin:200rpx auto;
+  background:#fff;
+  border-radius:8px;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-box-pack:justify;
+  z-index:33;
+}
+.model-title{
+  text-align:center;
+  font-size:32rpx;
+font-weight:bold;
+}
+.model-authcode-wrap{
+  display:-webkit-box;
+  width:100%;
+  height:23px;
+}
+.model-code-input{
+  border-bottom:1px solid #999;
+  width:70%;
+}
+.model-code-img{
+  width:30%;
+  height:100%;
+}
+.model-code-img image{
+  width:100%;
+  height:100%;
+}
+.model-cdkey-wrap{
+  width:100%;
+  border-bottom:1px solid #999;
+}
+.model-footer{
+  width:100%;
+  height:30px;
+  display:-webkit-box;
+}
+.model-footer .cen-line{
+  width:1px;
+  height:100%;
+  background:#999;
+}
+.model-footer text{
+  line-height: 30px;
+  text-align:center;
+  -webkit-box-flex:1;
+  font-size:32rpx;
+}
+.model-footer .model-confirm{
+  color:red;
+}
+/*结束  */
+.exchange{
+  font-size: 32rpx;
+  text-align: right;
+  font-weight: 600;
+  color: #333;
+  background-color: #fff;
+  border-bottom:1rpx solid #ebebeb;
+}
+.j_coupon{
+  background-color:#fff;
+  padding:20rpx 30rpx;
+  border-bottom:1rpx solid #f5f5f5;
+  margin-bottom:10rpx;
+}
+.j_couponlist-top{
+  text-align: right;
+  font-size: 30rpx;
+}
+.j_couponlist-center{
+  border-bottom:1px dashed #f5f5f5;
+  padding-bottom:10rpx;
+  margin-bottom:10rpx;
+}
+.j_couponlist-center text{
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.j_couponlist-center .textcolor {
+  font-size: 40rpx;
+  line-height: 1;
+}
+.j_couponlist-btm text{
+  color: #666;
+   font-size:29rpx;
+}
+.j_couponlist-btm{
+ margin-top:15rpx;
+}
+.tip_tip{
+  font-size: 26rpx;
+  color: #999 ;
+  padding: 3rpx 30rpx;
+  text-align: center;
+
+}
+.tip_tip view{
+
+  text-align: center;
+}

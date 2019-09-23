@@ -1,0 +1,24 @@
+/* pages/zht/weiyaoqing/weiyaoqing.wxss */
+/*<!--整体-->*/
+.picture{
+  width:100%;
+  height:1182rpx;
+  background:linear-gradient(0deg,rgba(255,93,119,1) 0%,rgba(255,66,96,1) 100%);
+  text-align: center;
+}
+.picture_img{
+  width:473rpx;
+  margin-top:245rpx;
+}
+.picture_font{
+  font-size:18px;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+}
+.picture_yaoqing{
+  width:274rpx;
+  height:74rpx;
+  margin-top:35rpx;
+
+}

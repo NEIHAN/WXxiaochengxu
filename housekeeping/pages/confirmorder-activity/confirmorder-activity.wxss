@@ -1,0 +1,204 @@
+page{
+    padding-bottom:50rpx;
+}
+.j_singletop{
+    background-color:#f7eed0;
+    padding:30rpx;
+    border-top: 4px dashed #ead58c;
+    border-bottom: 4px dashed #ead58c;
+    position: relative;
+    margin-bottom:20rpx;
+}
+.j_singleft{
+    position:relative;
+
+}
+.j_singleft image{
+    width:40rpx;
+    height: 40rpx;
+    display: inline-block;
+    position: absolute;
+    top:50%;
+    -webkit-transform: translateY(-50%);
+}
+.j_singleft text{
+    font-size: 28rpx;
+    margin-right:20rpx;
+}
+.j_singlelist{
+    background-color:#fff;
+    padding:30rpx;
+    position: relative;
+    margin-bottom:20rpx;
+}
+.j_singlelist text{
+    color:#333;
+}
+.checkbox{
+    position: absolute;
+    top:50%;
+    right:42rpx;
+    -webkit-transform: translateY(-50%);
+}
+
+/* 联系人 */
+.linkman{
+    display:-webkit-box;
+    -webkit-box-align:center;
+    position:absolute;
+    left:60rpx;
+    top:0;
+
+}
+.address{
+    width:100%;
+    padding-right:30px;
+    display:-webkit-box;
+    -webkit-box-pack:justify;
+    position:absolute;
+    left:60rpx;
+    top:18px;
+
+}
+.address .loca_addr{
+    width:240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.defaultAddr{
+    border:1px solid red;
+    color:red;
+    width:30px;
+    height:15px;
+    line-height: 14px;
+    text-align:center;
+    font-size:12px;
+    padding:0;
+    margin:0;
+    margin-left:5px;
+    border-radius:4px;
+}
+.address text:first-child{
+    -webkit-box-flex:1;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.address text:last-child{
+    min-width:30px;
+    padding-right:15px;
+}
+.two-row-layout{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx 30rpx;
+    margin-bottom: 20rpx;
+}
+.two-row-layout view{
+    color: #fd1438;
+}
+.left-layout{
+    font-size: 28rpx;
+}
+.right-layout{
+    font-size: 24rpx;
+    text-align: end;
+}
+.right-layout image{
+    width:34rpx;
+    height:34rpx;
+    vertical-align:-3px;
+
+
+}
+.orderItemContainer{
+    background-color: #fff;
+    padding-bottom: 30rpx;
+    padding-left: 19rpx;
+    margin-bottom: 20rpx;
+    display: flex;
+    flex-wrap:wrap;
+}
+.orderItem{
+    flex-grow:1;
+    border: 1rpx solid #cccccc;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+    padding: 20rpx 0;
+    border-radius: 8rpx;
+    position: relative;
+    width: 42%;
+}
+.orderItem view{
+    text-align: center;
+}
+.active_orderItem{
+    border-color: #fd1438;
+    color: #fd1438;
+}
+.active_orderItem view{
+    color: #fd1438;
+}
+.two-row-layout1{
+    margin-bottom: 0;
+}
+.two-row-layout .normalColor{
+    color: #333;
+}
+.total-money{
+    padding: 20rpx 30rpx;
+    color: #fd1438;
+    font-size: 28rpx;
+    text-align: right;
+    background-color: #fff;
+}
+.selectFooter{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 4rpx;
+    position: absolute;
+    bottom: 0;
+    right:0;
+    background: url("http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/selecteditem.jpg");
+    background-size: cover;
+}
+#suggestMask{
+    width:100%;height:100%;
+    position:absolute;
+    top:0;left:0;background:rgba(0,0,0,0.5);
+    z-index:999;
+}
+.suggestBox{
+    width:90%;height:78%;
+    position:absolute;
+    top:6%;left:5%;background:#fff;
+    border-radius:4px;
+}
+.suggestTitle{
+    text-align:center;
+    line-height:80rpx;
+    font-size:24rpx;
+}
+.interView{
+    width:80%;
+    height:auto;
+    margin:20px auto;
+}
+.interView text{
+    color:#666;
+    font-size:22rpx;line-height:40rpx;
+}
+.suggestBox button{
+    width:100%;height:50px;
+    font-size:14px;
+    line-height:50px;
+    text-align:center;
+    color:#fd1438;
+    border:none;
+    border-top:1rpx solid #efefef;
+    position:absolute;
+    bottom:0;
+    background:none;
+    border-radius:0;
+
+}

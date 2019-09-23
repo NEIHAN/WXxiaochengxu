@@ -1,0 +1,43 @@
+/* pages/my/address.wxss */
+.j_addewssbtn{
+  color:#fff;
+  margin:15px 0;
+}
+.j_addresslist{
+  background-color:#fff;
+  padding-top:15px;
+  padding-bottom:15px;
+  font-size:14px;
+  color:#333;
+  margin-bottom:10px;
+}
+.j_addresslist .view1{
+  font-size: 16px;
+  margin-bottom:15px;
+  -webkit-box-align:center;
+}
+.j_addresslist .view1 text{
+  padding-left:20rpx;
+}
+.j_addresslist .view2{
+  padding-bottom:8px;
+  border-bottom:1px dashed #ebebeb;
+  margin-bottom:15px;
+}
+.j_addresslist .view3{
+  display: -webkit-box;
+  -webkit-box-pack:justify;
+}
+.j_addresslist .view3 view{
+  display: -webkit-box;
+}
+.j_addresslist .view3 button{
+  color:#666;
+  background-color:#fff;
+}
+button::after{
+border: none;
+}
+.navigator button{
+  border:1px solid #ebebeb;
+}

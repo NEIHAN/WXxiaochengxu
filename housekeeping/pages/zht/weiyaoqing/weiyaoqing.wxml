@@ -1,0 +1,21 @@
+<!--pages/zht/weiyaoqing/weiyaoqing.wxml-->
+<view class='totality'>
+<!--整体-->
+ <view class='picture'>
+  <image src='https://www.zaihush.com/public/images/weiyaoqing.png' class='picture_img'></image>
+  <text class='picture_font'>您尚未邀请好友</text>
+ <image src='https://www.zaihush.com/public/images/weihaoyou.png' class='picture_yaoqing'></image>
+ 
+ </view>
+
+
+
+
+
+
+
+
+
+
+
+</view>

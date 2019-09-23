@@ -1,0 +1,116 @@
+<view style="width:100%;position:relative;background:gray;">
+  <official-account style=""></official-account>
+</view>
+<!--index.wxml-->
+<!-- <wxs src="index.js"></wxs> -->
+<view class="container" class="{{showAlert?'container disabledScroll':'container'}}">
+  <!--<view class="locationIndex">-->
+  <!--<view class="locationIcon" bindtap="toreposition">-->
+  <!--<image src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/location.png"></image>-->
+  <!--<text>{{address}}</text>-->
+  <!--</view>-->
+  <!--&lt;!&ndash;<view class="locationBox">暂时为空</view>&ndash;&gt;-->
+  <!--</view>-->
+  <view wx:if="{{noLogin}}" style="width: 100%;">
+    <view catchtap="aaaa" style="position: fixed;width: 100%;background-color: rgba(0,0,0,.7);height: 100vh;z-index: 22">
+
+    </view>
+    <view style="border-radius: 8px;  position: absolute;left: 50%;transform: translate(-50%,-50%);top: 50%;z-index: 9999999;width: 80%;background-color: #fff;">
+      <view style="padding:80rpx 0;font-size:16px;text-align:center;">注册领取188元新人优惠券</view>
+      <button open-type="getUserInfo" bindgetuserinfo="bindUser" style="margin: 0;border: none;padding: 0;position: static;color: #09bb07;border-top: 1rpx solid #f0f0f0">点击领取</button>
+
+    </view>
+  </view>
+
+
+  <view class="{{showAlert?'alert-img-wrap show-alert-img':'alert-img-wrap'}}">
+    <!--<navigator url="/pages/my/linkToActivity">-->
+    <view class="alertInner">
+      <image src="{{alertBanner}}" bindtap='getRedWallet'></image>
+      <text class="close-btn" bindtap='closeAlertImg'>×</text>
+    </view>
+    <!--</navigator>-->
+  </view>
+  <swiper indicator-active-color="#ddd" indicator-color="rgba(255, 255, 255)" style="width:100%;height: 300rpx" indicator-dots="{{indicatorDots}}" circular autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{d.banner}}" wx:key="banner" wx:key="{{index}}">
+      <swiper-item style="width:100%;">
+        <image src="{{item.pic}}" style='width:100%;height:100%;' data-index="{{index}}" bindtap="carouselHref"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <swiper class="categoryList" duration="{{duration}}" indicator-color="rgba(228,228,228,1)" indicator-active-color="#fd1438" indicator-dots="true" style='' interval="{{interval}}">
+    <swiper-item wx:for="{{d.categoryList}}" wx:key="{{index}}">
+      <block wx:for="{{item}}" wx:key="{{item.id}}">
+        <view class="category-info">
+          <view data-id="{{item.id}}" data-catname="{{item.catname}}" bindtap="goDetail" hover-class="none">
+            <image src="{{item.image}}" class="category-image"></image>
+            <view class="category-text">{{item.catname}}</view>
+          </view>
+        </view>
+      </block>
+    </swiper-item>
+
+    <!-- <block>
+      <swiper-item>
+        <block wx:for="{{d.categoryList}}" wx:key="{{index}}">
+          <block wx:for="{{item}}" wx:key="{{item.id}}" wx:if="{{item.catname!='深度保洁'}}">
+            <view class="category-info">
+              <view data-id="{{item.id}}" data-catname="{{item.catname}}" bindtap="goDetail" hover-class="none">
+                <image src="{{item.image}}" class="category-image"></image>
+                <view class="category-text">{{item.catname}}</view>
+              </view>
+
+            </view>
+          </block>
+        </block>
+        <block wx:for="{{huiseArr}}" wx:key="{{index}}">
+          <view class="category-info">
+            <view>
+              <image src="{{item.src}}" class="category-image"></image>
+              <view class="category-text">{{item.name}}</view>
+            </view>
+
+          </view>
+        </block>
+
+      </swiper-item>
+    </block> -->
+  </swiper>
+
+  <view style='position:relative;width:100%;text-align: center'>
+    <image style='width:100%;height:400rpx;' src="{{d.middle[0].pic}}"></image>
+  </view>
+  <view class="indexmokuai3 bblg1">
+    <view class="singlefoot singlefoot1" style="margin-top:20rpx;">
+
+      <!--<navigator class="orderGo"  bindtap="goActivity" data-id="5">立即预约</navigator>-->
+      <button open-type="getUserInfo" bindgetuserinfo="bindUser" url='/pages/index/SingleReservation?catname=1&&yy1_id=1'>立即预约</button>
+      <!--<button open-type="getUserInfo" bindgetuserinfo="bindUser" wx:if="{{!hasLogin}}" url='/pages/index/SingleReservation?catname=1&&yy1_id=1' >立即预约</button>-->
+
+    </view>
+  </view>
+  <view class="activity-place">
+    <view></view>
+    活动专区
+  </view>
+  <scroll-view class="activity-swiper" scroll-x="true">
+
+    <view data-id="{{item.activity_id}}" bindtap="goActivity" class="activity-swiper-item" wx:for="{{act_list}}" wx:key="{{index}}">
+      <!--标记图-->
+      <image src="{{item.pic}}" class="slide-image" />
+      <view class="first-desc">
+        <view class="first-desc-left">
+          {{item.title}}
+        </view>
+        <view class="first-desc-right">低至￥{{item.price}}/{{item.unit}}</view>
+
+      </view>
+      <view class="second-desc">{{item.content}}</view>
+    </view>
+
+  </scroll-view>
+  <view class="cut-line"></view>
+
+</view>
+  

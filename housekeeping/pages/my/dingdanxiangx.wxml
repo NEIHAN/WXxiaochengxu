@@ -1,0 +1,26 @@
+<view class="j_xiangq_top pbt10 ">
+  <view class="j_viewbox plr10">
+    <view>陈小姐 <text>13601077193</text></view>
+    <view><text>90㎡</text></view>
+  </view>
+  <view class="j_viewbox plr10" style="margin-top:20rpx;">北京市天通苑昌平区</view>
+</view>
+
+<view  class="j_xiangq_center">
+  <view class="tittle ptlr15 bblg1">服务项目</view>
+  <view class="tittle tittle1 ptlr15 bblg1" style='font-size:28rpx;'>家庭保洁</view>
+  <view class="j_xiangqmain ptlr15">
+    <image  src="http://zaihumnorj.oss-cn-hangzhou.aliyuncs.com/2.png"></image>
+    <view class='j_xqmainr'>
+      <view class="view1">京东 -4x小时家庭保洁</view>
+      <view class="view1 view2">
+        <text>京东 -4x小时家庭保洁</text><text>数量：1</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view  class="j_xiangq_bottom plr10">
+  <view>服务订单 <text>344658797654676543</text></view>
+  <view style="margin-top:20rpx;">预约时间 <text>2017-11-11 11：13：25</text></view>
+</view>
